@@ -7,7 +7,7 @@ type StatItemProps = {
 
 const StatItem = ({ value, description }: StatItemProps) => (
     <div>
-        <p className="text-[#A3E635] font-normal text-3xl">{value}</p>
+        <p className="text-[#19B7A5] font-normal text-3xl">{value}</p>
         <p className="text-[#9CA3AF] text-base">{description}</p>
     </div>
 );

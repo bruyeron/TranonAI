@@ -45,13 +45,13 @@ function ProblemCard({
   gradient,
 }: Problem) {
   return (
-    <div className="border border-[#334155] rounded-2xl p-4 w-[284px] hover:border-[#A3E635] transition-colors duration-300 bg-[#0F172A]">
+    <div className="border border-[#334155] rounded-2xl p-4 w-[284px] hover:border-[#19B7A5] transition-colors duration-300 bg-[#0F172A]">
       <Icon
         className="rounded-[5px] p-1.5 w-8 h-8 text-white"
         style={{ background: gradient }}
         aria-label={title}
       />
-      <h1 className="text-white font-medium text-xl my-2.5 hover:text-[#A3E635]">
+      <h1 className="text-white font-medium text-xl my-2.5 hover:text-[#19B7A5]">
         {title}
       </h1>
       <p className="text-[#9CA3AF] text-base">{description}</p>

@@ -10,7 +10,7 @@ const MainButton = ({ children, className = "", onClick }: ButtonProps) => (
   <button
     onClick={onClick}
     className={`
-      bg-[#A3E635] hover:bg-[#BEF264]
+      bg-[#19B7A5] hover:bg-[#77d8cd]
       flex justify-center items-center
       h-[3rem]
       text-black 

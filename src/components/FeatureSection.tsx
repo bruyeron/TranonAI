@@ -53,7 +53,7 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="py-24 bg-[#0F172A] relative overflow-hidden">
+    <section className="py-16 sm:py-24 bg-[#0F172A] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Titre */}
         <motion.div
@@ -61,18 +61,18 @@ export function FeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="text-6xl lg:text-6xl font-poppins font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-poppins font-bold text-white mb-4">
             Trois modules, une <span className="text-[#19B7A5]">solution complète</span>
           </h2>
-          <p className="text-xl text-gray-300 font-open-sans max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-300 font-open-sans max-w-3xl mx-auto px-2">
             Chaque module est conçu pour être modulaire et personnalisable selon vos besoins et votre budget.
           </p>
         </motion.div>
 
         {/* Modules */}
-        <div className="space-y-24">
+        <div className="space-y-16 sm:space-y-24">
           {features.map((feature, i) => (
             <motion.div
               key={feature.id}
@@ -80,12 +80,12 @@ export function FeaturesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="grid lg:grid-cols-2 gap-12 items-center"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center"
             >
               {/* Texte */}
-              <div className={i % 2 === 1 ? "lg:order-2" : ""}>
+              <div className={`${i % 2 === 1 ? "lg:order-2" : ""}`}>
                 <div
-                  className="inline-flex items-center px-4 py-2 rounded-full mb-4"
+                  className="inline-flex items-center px-4 py-2 rounded-full mb-4 max-w-max"
                   style={{
                     backgroundColor: `${feature.bgColor}50`,
                     border: `1px solid ${feature.color}50`,
@@ -96,21 +96,20 @@ export function FeaturesSection() {
                     {feature.subtitle}
                   </span>
                 </div>
-                <h3 className="text-3xl font-poppins text-white mb-6">{feature.title}</h3>
+                <h3 className="text-2xl sm:text-3xl font-poppins text-white mb-6">{feature.title}</h3>
 
-                <div className="space-y-6">
+                <div className="space-y-5 sm:space-y-6">
                   {feature.devices.map((device, j) => (
                     <div key={j} className="flex items-start gap-4 group">
                       <div
-                        className="w-12 h-12 rounded-xl flex items-center justify-center bg-opacity-20 group-hover:scale-110 transition-transform duration-300"
+                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-opacity-20 group-hover:scale-110 transition-transform duration-300"
                         style={{ backgroundColor: feature.bgColor}}
                       >
-                        <device.icon className="w-6 h-6" style={{ color: feature.color
-                        }} />
+                        <device.icon className="w-4 h-4 sm:w-6 sm:h-6" style={{ color: feature.color }} />
                       </div>
                       <div>
-                        <h4 className="text-lg text-white font-poppins">{device.name}</h4>
-                        <p className="text-gray-400 font-open-sans">{device.description}</p>
+                        <h4 className="text-base sm:text-lg text-white font-poppins">{device.name}</h4>
+                        <p className="text-gray-400 font-open-sans text-sm sm:text-base">{device.description}</p>
                       </div>
                     </div>
                   ))}
@@ -118,19 +117,19 @@ export function FeaturesSection() {
               </div>
 
               {/* Visualisation */}
-              <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                <Card className="bg-gradient-to-br from-[#1E293B] to-[#0F172A] border border-gray-700 p-6">
-                  <div className="flex items-center justify-between mb-6">
+              <div className={`${i % 2 === 1 ? "lg:order-1" : ""}`}>
+                <Card className="bg-gradient-to-br from-[#1E293B] to-[#0F172A] border border-gray-700 p-5 sm:p-6">
+                  <div className="flex items-center justify-between mb-5 sm:mb-6">
                     <div className="flex items-center gap-3">
                       <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center"
+                        className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center"
                         style={{ backgroundColor: `${feature.color}30` }}
                       >
-                        <feature.icon className="w-6 h-6" style={{ color: feature.color }} />
+                        <feature.icon className="w-4 h-4 sm:w-6 sm:h-6" style={{ color: feature.color }} />
                       </div>
                       <div>
-                        <h4 className="font-poppins text-white">Tranon'AI</h4>
-                        <p className="text-xs text-gray-400 font-open-sans">{feature.title}</p>
+                        <h4 className="font-poppins text-white text-sm sm:text-base">Tranon'AI</h4>
+                        <p className="text-xs sm:text-sm text-gray-400 font-open-sans">{feature.title}</p>
                       </div>
                     </div>
                     <div className="flex gap-1">
@@ -140,20 +139,20 @@ export function FeaturesSection() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-4 mb-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
                     {feature.devices.map((device, k) => (
                       <div
                         key={k}
-                        className="bg-[#0F172A] p-4 rounded-lg border border-gray-700 text-center"
+                        className="bg-[#0F172A] p-3 rounded-lg border border-gray-700 text-center"
                       >
-                        <device.icon className="w-6 h-6 mx-auto mb-2" style={{ color: feature.color }} />
-                        <p className="text-xs text-gray-300 font-open-sans">{device.name}</p>
+                        <device.icon className="w-4 h-4 sm:w-6 sm:h-6 mx-auto mb-1 sm:mb-2" style={{ color: feature.color }} />
+                        <p className="text-xs sm:text-sm text-gray-300 font-open-sans">{device.name}</p>
                       </div>
                     ))}
                   </div>
 
                   <div>
-                    <div className="flex justify-between text-sm font-open-sans">
+                    <div className="flex justify-between text-xs sm:text-sm font-open-sans">
                       <span className="text-gray-400">Status</span>
                       <span className="text-green-400">Actif</span>
                     </div>
@@ -172,8 +171,8 @@ export function FeaturesSection() {
       </div>
 
       {/* Effets visuels */}
-      <div className="absolute top-1/4 left-0 w-64 h-64 bg-[#6BE445]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-[#FBAF40]/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-0 w-52 h-52 sm:w-64 sm:h-64 bg-[#6BE445]/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-52 h-52 sm:w-64 sm:h-64 bg-[#FBAF40]/10 rounded-full blur-3xl" />
     </section>
   );
 }

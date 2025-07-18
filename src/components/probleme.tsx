@@ -1,4 +1,5 @@
 import { Zap, Shield, Clock3, Sprout } from "lucide-react";
+import { motion } from "framer-motion";
 
 type Problem = {
   Icon: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -12,7 +13,7 @@ const problems: Problem[] = [
     Icon: Zap,
     title: "Vos factures explosent?",
     description:
-      "Les maisons traditionnelles gaspillent 30 à 50% d'énérgie en raison d'une automatisation inefficace et d'un contrôle manuel.",
+      "Les maisons traditionnelles gaspillent 30 à 50% d'énergie en raison d'une automatisation inefficace et d'un contrôle manuel.",
     gradient: "linear-gradient(90deg, #EF4444 0%, #DC2626 100%)",
   },
   {
@@ -45,42 +46,56 @@ function ProblemCard({
   gradient,
 }: Problem) {
   return (
-    <div className="border border-[#334155] rounded-2xl p-4 w-[284px] hover:border-[#19B7A5] transition-colors duration-300 bg-[#0F172A]">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="border border-[#334155] rounded-2xl p-6 bg-[#0F172A] hover:border-[#19B7A5] hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer"
+    >
       <Icon
-        className="rounded-[5px] p-1.5 w-8 h-8 text-white"
+        className="rounded-[5px] p-1.5 w-10 h-10 text-white"
         style={{ background: gradient }}
         aria-label={title}
       />
-      <h1 className="text-white font-medium text-xl my-2.5 hover:text-[#19B7A5]">
+      <h2 className="text-white font-semibold text-lg sm:text-xl my-3 hover:text-[#19B7A5] transition-colors duration-200">
         {title}
-      </h1>
-      <p className="text-[#9CA3AF] text-base">{description}</p>
-    </div>
+      </h2>
+      <p className="text-[#9CA3AF] text-sm sm:text-base">{description}</p>
+    </motion.div>
   );
 }
 
 function Probleme() {
   return (
-    <div className="flex flex-col justify-center items-center bg-[#1E293B] h-auto py-5">
-      <h1 className="text-white font-bold text-6xl py-5">
+    <section className="flex flex-col items-center bg-[#1E293B] py-16 px-4 sm:px-6 lg:px-10">
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-white font-bold text-3xl sm:text-5xl md:text-6xl text-center mb-4"
+      >
         Les problèmes que nous résolvons
-      </h1>
-      <p className="text-[#9CA3AF] text-xl w-[50vw] text-center max-md:w-[90vw] max-md:px-4">
+      </motion.h1>
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+        className="text-[#9CA3AF] text-base sm:text-lg md:text-xl text-center max-w-3xl mb-12"
+      >
         Every Malagasy homeowner faces these daily challenges. Tranon'AI
         transforms these pain points into intelligent solutions.
-      </p>
-      <div className="grid grid-cols-4 gap-5 mx-10 my-7 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:mx-4">
-        {problems.map(({ Icon, title, description, gradient }) => (
-          <ProblemCard
-            key={title}
-            Icon={Icon}
-            title={title}
-            description={description}
-            gradient={gradient}
-          />
+      </motion.p>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl">
+        {problems.map((props, index) => (
+          <ProblemCard key={index} {...props} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -1,12 +1,13 @@
 import { Smartphone, House, ChartPie, ShieldCheck } from "lucide-react";
 import { SecondaryButton } from "./button";
+import { motion } from "framer-motion";
 
 const features = [
   {
     icon: <House className="bg-[#19B7A5] rounded-[12px] w-14 h-10 p-2 m-1" />,
     title: "Hub de contrôle intelligent",
     badge: "Automatisation en un seul geste",
-    badgeColor: "#19B7A5",
+    badgeColor: "#FBAF42",
     description:
       "Gérez tous vos appareils depuis un tableau de bord intuitif : planifiez, créez des ambiances et suivez votre consommation en temps réel.",
     bg: "#19B7A51A",
@@ -16,7 +17,7 @@ const features = [
     icon: <ChartPie className="bg-[#334155] rounded-[12px] w-14 h-10 p-2 m-1" />,
     title: "Analyse énergétique",
     badge: "Economisez jusqu'à 40% sur vos factures",
-    badgeColor: "#19B7A5",
+    badgeColor: "#FBAF42",
     description:
       "Suivez vos habitudes de consommation, identifiez les opportunités d'économie, et laissez l'IA vous proposer des recommandations personnalisées.",
     bg: "#0F172A80",
@@ -26,7 +27,7 @@ const features = [
     icon: <ShieldCheck className="bg-[#334155] rounded-[12px] w-14 h-10 p-2 m-1" />,
     title: "Surveillance de sécurité",
     badge: "Protection 24h/24 et 7j/7",
-    badgeColor: "#19B7A5",
+    badgeColor: "#FBAF42",
     description:
       "Recevez des alertes instantanées en cas d'activité inhabituelle, surveillez votre maison à distance et assurez la sécurité de votre famille à tout moment.",
     bg: "#0F172A80",
@@ -36,52 +37,91 @@ const features = [
 
 function ControleMobile() {
   return (
-    <section className="bg-[#1E293B] py-16 flex flex-col items-center">
-      <h1 className="font-bold text-6xl text-white text-center px-4">
-        Contrôlez tout <span className="text-[#19B7A5]">depuis votre téléphone</span>
-      </h1>
-      <p className="text-xl text-[#9CA3AF] text-center mt-5 px-6 leading-relaxed max-w-3xl">
-        L'application mobile Tranon'AI met l'automatisation intelligente de votre maison dans votre poche. <br />
-        Simple, intuitive et pensée pour les familles malgaches.
-      </p>
+    <section className="bg-[#1E293B] py-16 px-4 sm:px-8 flex flex-col items-center">
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="font-bold text-3xl sm:text-5xl lg:text-6xl text-white text-center max-w-3xl"
+      >
+        Contrôlez tout{" "}
+        <span className="text-[#19B7A5]">depuis votre téléphone</span>
+      </motion.h1>
 
-      <div className="flex gap-14 mt-14 px-6 max-w-screen-xl mx-auto flex-wrap justify-center">
-        {/* Image + Icon */}
-        <div
-          className="rounded-[24px] w-[384px] h-[768px] bg-cover bg-center relative"
-          style={{ backgroundImage: "url('./src/assets/tranonAI-mobileApp.jpg')" }}
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
+        className="text-base sm:text-lg lg:text-xl text-[#9CA3AF] text-center mt-6 leading-relaxed max-w-2xl"
+      >
+        L'application mobile Tranon'AI met l'automatisation intelligente de votre
+        maison dans votre poche. Simple, intuitive et pensée pour les familles malgaches.
+      </motion.p>
+
+      <div className="flex flex-col lg:flex-row gap-10 mt-14 items-center justify-center w-full max-w-7xl">
+        {/* IMAGE MOBILE */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="rounded-[24px] w-[260px] sm:w-[300px] md:w-[340px] lg:w-[384px] aspect-[9/16] bg-cover bg-center relative"
+          style={{
+            backgroundImage: `url(${new URL("../assets/tranonAI-mobileApp.jpg", import.meta.url).href})`,
+          }}
         >
-          <Smartphone className="bg-[#19B7A5] w-18 h-18 p-5 rounded-full absolute -top-7 -right-5" />
-        </div>
+          <Smartphone className="bg-[#FBAF42] w-16 h-16 sm:w-18 sm:h-18 p-4 sm:p-5 rounded-full absolute -top-7 -right-5" />
+        </motion.div>
 
-        <div className="flex flex-col gap-6 justify-center">
+        {/* FEATURES */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex flex-col gap-6 w-full max-w-2xl"
+        >
           {features.map((feature, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="rounded-[16px] p-6 flex items-start gap-5"
-              style={{ background: feature.bg, border: `1px solid ${feature.border}`, width: 584, height: 164 }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+              className="rounded-[16px] p-4 sm:p-6 flex items-start gap-4"
+              style={{
+                background: feature.bg,
+                border: `1px solid ${feature.border}`,
+              }}
             >
               {feature.icon}
               <div>
-                <p className="font-bold text-xl text-white leading-snug">
+                <p className="font-bold text-lg sm:text-xl text-white leading-snug">
                   {feature.title}{" "}
                   <span
                     className="px-2 py-1 text-xs font-normal rounded-full ml-2"
-                    style={{ backgroundColor: feature.badgeColor, color: "#0F172A" }}
+                    style={{
+                      backgroundColor: feature.badgeColor,
+                      color: "#0F172A",
+                    }}
                   >
                     {feature.badge}
                   </span>
                 </p>
-                <p className="text-base text-[#9CA3AF] mt-2">{feature.description}</p>
+                <p className="text-sm sm:text-base text-[#9CA3AF] mt-2">{feature.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
 
-          <div className="flex gap-3 mt-2">
-            <SecondaryButton className="bg-[#334155]">Téléchargez pour iOS</SecondaryButton>
-            <SecondaryButton className="bg-[#334155]">Téléchargez pour Android</SecondaryButton>
+          <div className="flex flex-col sm:flex-row gap-3 mt-4">
+            <SecondaryButton className="bg-[#334155] w-full sm:w-auto">
+              Téléchargez pour iOS
+            </SecondaryButton>
+            <SecondaryButton className="bg-[#334155] w-full sm:w-auto">
+              Téléchargez pour Android
+            </SecondaryButton>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

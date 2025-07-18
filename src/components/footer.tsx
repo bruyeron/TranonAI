@@ -1,11 +1,11 @@
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 function Footer() {
-  const linkStyle = "text-[#9CA3AF] font-normal text-base hover:text-[#19B7A5] transition";
+  const linkStyle = "text-[#9CA3AF] font-normal text-base hover:text-[#FBAF42] transition";
 
   return (
     <footer className="bg-[#0F172A] border-t-4 border-[#334155] pb-10">
-      <section className="grid grid-cols-4 gap-7 py-20 px-10 w-[80%] mx-auto border-b-2 border-[#334155]">
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 py-16 px-4 sm:px-10 w-full max-w-[1200px] mx-auto border-b-2 border-[#334155]">
         {/* Brand + Socials */}
         <div>
           <h1 className="text-[#19B7A5] font-semibold text-2xl mb-3">Tranon'AI</h1>
@@ -17,7 +17,7 @@ function Footer() {
               <Icon
                 key={index}
                 strokeWidth={1}
-                className="text-white bg-[#1E293B] border border-[#475569] rounded-full p-2 w-10 h-10 hover:text-[#19B7A5] transition"
+                className="text-white bg-[#1E293B] border border-[#475569] rounded-full p-2 w-10 h-10 hover:text-[#FBAF42] transition"
               />
             ))}
           </div>
@@ -55,13 +55,13 @@ function Footer() {
       </section>
 
       {/* Bottom Bar */}
-      <div className="flex justify-between items-center px-10 w-[80%] mx-auto mt-5 flex-wrap gap-4">
+      <div className="flex flex-col md:flex-row justify-between items-center px-4 sm:px-10 w-full max-w-[1200px] mx-auto mt-5 gap-4 text-center md:text-left">
         <p className="text-sm text-[#9CA3AF]">
           © 2025 Tranon'AI. All rights reserved. Made with ❤️ in Madagascar.
         </p>
-        <div className="flex gap-4 text-sm text-[#9CA3AF]">
+        <div className="flex flex-wrap justify-center md:justify-end gap-4 text-sm text-[#9CA3AF]">
           {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item, i) => (
-            <a key={i} href="#" className="hover:text-[#19B7A5] transition">
+            <a key={i} href="#" className="hover:text-[#FBAF42] transition">
               {item}
             </a>
           ))}

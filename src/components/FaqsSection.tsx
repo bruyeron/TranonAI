@@ -59,8 +59,8 @@ function FAQSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-[#19B7A5]/20 rounded-2xl mb-6">
-            <HelpCircle className="w-8 h-8 text-[#19B7A5]" />
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-[#FBAF42]/20 rounded-2xl mb-6">
+            <HelpCircle className="w-8 h-8 text-[#FBAF42]" />
           </div>
           <h2 className="text-6xl lg:text-6xl font-bold text-white mb-4">Questions <span className="text-[#19B7A5]">fréquentes</span></h2>
           <p className="text-gray-400 text-lg">
@@ -108,7 +108,7 @@ function FAQSection() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="p-8 rounded-2xl border border-[#6BE445]/20 bg-[#19B7A5]/10">
+          <div className="p-8 rounded-2xl border border-[#19B7A5]/20 bg-[#19B7A5]/30">
             <h3 className="text-xl text-white mb-2">Vous ne trouvez pas votre réponse ?</h3>
             <p className="text-gray-300 mb-6">
               Notre équipe support est là pour vous aider avec toutes vos questions

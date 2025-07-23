@@ -53,20 +53,20 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="py-16 sm:py-24 bg-[#0F172A] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-24 bg-[#F2F4F8] relative overflow-hidden">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Titre */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16 sm:mb-20"
+          className="mb-16 text-center sm:mb-20"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-poppins font-bold text-white mb-4">
+          <h2 className="mb-4 text-4xl font-bold text-black sm:text-5xl lg:text-6xl font-poppins">
             Trois modules, une <span className="text-[#19B7A5]">solution complète</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-300 font-open-sans max-w-3xl mx-auto px-2">
+          <p className="max-w-3xl px-2 mx-auto text-lg text-gray-500 sm:text-xl font-open-sans">
             Chaque module est conçu pour être modulaire et personnalisable selon vos besoins et votre budget.
           </p>
         </motion.div>
@@ -80,12 +80,12 @@ export function FeaturesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center"
+              className="grid items-center grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-12"
             >
               {/* Texte */}
               <div className={`${i % 2 === 1 ? "lg:order-2" : ""}`}>
                 <div
-                  className="inline-flex items-center px-4 py-2 rounded-full mb-4 max-w-max"
+                  className="inline-flex items-center px-4 py-2 mb-4 rounded-full max-w-max"
                   style={{
                     backgroundColor: `${feature.bgColor}50`,
                     border: `1px solid ${feature.color}50`,
@@ -96,20 +96,20 @@ export function FeaturesSection() {
                     {feature.subtitle}
                   </span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-poppins text-white mb-6">{feature.title}</h3>
+                <h3 className="mb-6 text-2xl text-black sm:text-3xl font-poppins">{feature.title}</h3>
 
                 <div className="space-y-5 sm:space-y-6">
                   {feature.devices.map((device, j) => (
                     <div key={j} className="flex items-start gap-4 group">
                       <div
-                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-opacity-20 group-hover:scale-110 transition-transform duration-300"
+                        className="flex items-center justify-center w-10 h-10 transition-transform duration-300 sm:w-12 sm:h-12 rounded-xl bg-opacity-20 group-hover:scale-110"
                         style={{ backgroundColor: feature.bgColor}}
                       >
                         <device.icon className="w-4 h-4 sm:w-6 sm:h-6" style={{ color: feature.color }} />
                       </div>
                       <div>
-                        <h4 className="text-base sm:text-lg text-white font-poppins">{device.name}</h4>
-                        <p className="text-gray-400 font-open-sans text-sm sm:text-base">{device.description}</p>
+                        <h4 className="text-base text-black sm:text-lg font-poppins">{device.name}</h4>
+                        <p className="text-sm text-gray-400 font-open-sans sm:text-base">{device.description}</p>
                       </div>
                     </div>
                   ))}
@@ -122,14 +122,14 @@ export function FeaturesSection() {
                   <div className="flex items-center justify-between mb-5 sm:mb-6">
                     <div className="flex items-center gap-3">
                       <div
-                        className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center"
+                        className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-xl"
                         style={{ backgroundColor: `${feature.color}30` }}
                       >
                         <feature.icon className="w-4 h-4 sm:w-6 sm:h-6" style={{ color: feature.color }} />
                       </div>
                       <div>
-                        <h4 className="font-poppins text-white text-sm sm:text-base">Tranon'AI</h4>
-                        <p className="text-xs sm:text-sm text-gray-400 font-open-sans">{feature.title}</p>
+                        <h4 className="text-sm text-black font-poppins sm:text-base">Tranon'AI</h4>
+                        <p className="text-xs text-gray-400 sm:text-sm font-open-sans">{feature.title}</p>
                       </div>
                     </div>
                     <div className="flex gap-1">
@@ -139,14 +139,14 @@ export function FeaturesSection() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
+                  <div className="grid grid-cols-2 gap-3 mb-4 sm:grid-cols-3">
                     {feature.devices.map((device, k) => (
                       <div
                         key={k}
                         className="bg-[#0F172A] p-3 rounded-lg border border-gray-700 text-center"
                       >
-                        <device.icon className="w-4 h-4 sm:w-6 sm:h-6 mx-auto mb-1 sm:mb-2" style={{ color: feature.color }} />
-                        <p className="text-xs sm:text-sm text-gray-300 font-open-sans">{device.name}</p>
+                        <device.icon className="w-4 h-4 mx-auto mb-1 sm:w-6 sm:h-6 sm:mb-2" style={{ color: feature.color }} />
+                        <p className="text-xs text-gray-300 sm:text-sm font-open-sans">{device.name}</p>
                       </div>
                     ))}
                   </div>
@@ -156,7 +156,7 @@ export function FeaturesSection() {
                       <span className="text-gray-400">Status</span>
                       <span className="text-green-400">Actif</span>
                     </div>
-                    <div className="h-2 bg-gray-700 rounded-full overflow-hidden mt-1">
+                    <div className="h-2 mt-1 overflow-hidden bg-gray-700 rounded-full">
                       <div
                         className="h-full rounded-full"
                         style={{ backgroundColor: feature.color, width: "85%" }}

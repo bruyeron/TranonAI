@@ -20,8 +20,8 @@ const dashboardCards = [
 
 export function AppSection() {
   return (
-    <section className="py-24 bg-[#1E293B] text-gray-300 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+    <section className="py-24 bg-[#F2F4F8] text-black-300 relative overflow-hidden">
+      <div className="grid items-center gap-16 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 lg:grid-cols-2">
         {/* === LEFT CONTENT === */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -45,7 +45,7 @@ export function AppSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-6xl lg:text-6xl font-poppins font-bold mb-6"
+            className="mb-6 text-6xl font-bold lg:text-6xl font-poppins"
           >
             Contrôlez votre maison depuis <span className="text-[#19B7A5]">votre smartphone</span>
           </motion.h2>
@@ -55,7 +55,7 @@ export function AppSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-600 mb-8 font-open-sans"
+            className="mb-8 text-xl text-black-600 font-open-sans"
           >
             Une application intuitive qui met le contrôle total de votre maison dans votre poche, avec NEXORA, votre assistant IA vocal.
           </motion.p>
@@ -73,8 +73,8 @@ export function AppSection() {
                 <Mic className="w-6 h-6 text-black" />
               </div>
               <div>
-                <h3 className="text-xl font-poppins mb-2">NEXORA - Assistant IA Vocal</h3>
-                <p className="text-gray-300 font-open-sans mb-4">
+                <h3 className="mb-2 text-xl font-poppins">NEXORA - Assistant IA Vocal</h3>
+                <p className="mb-4 text-black-600 font-open-sans">
                   Contrôlez votre maison par commandes vocales. Idéal pour les personnes avec des besoins d'accessibilité.
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -106,10 +106,10 @@ export function AppSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.7 + i * 0.1, duration: 0.4 }}
                 viewport={{ once: true }}
-                className="text-center p-4"
+                className="p-4 text-center"
               >
                 <feature.icon className="w-8 h-8 text-[#19B7A5] mx-auto mb-2" />
-                <h4 className="font-poppins text-sm mb-1">{feature.title}</h4>
+                <h4 className="mb-1 text-sm font-poppins">{feature.title}</h4>
                 <p className="text-xs text-gray-500 font-open-sans">{feature.desc}</p>
               </motion.div>
             ))}
@@ -121,13 +121,13 @@ export function AppSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
             viewport={{ once: true }}
-            className="flex flex-col justify-center sm:flex-row gap-4"
+            className="flex flex-col justify-center gap-4 sm:flex-row"
           >
-            <MainButton className="bg-[#19B7A5] hover:bg-[#19B7A5] text-black px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105">
+            <MainButton className="bg-[#19B7A5] hover:bg-[#19B7A5] text-black px-8 py-4 font-normal rounded-lg transition-all duration-300 hover:scale-105">
               Télécharger l'app
             </MainButton>
             <SecondaryButton
-              className="border-[#FBAF40] text-[#FBAF40] hover:bg-[#FBAF40] hover:text-black px-8 py-4 rounded-lg transition-all duration-300"
+              className="border-[#FBAF40] text-black hover:bg-[#FBAF40] hover:text-black px-8 py-4 rounded-lg transition-all duration-300"
             >
               Voir la démo
             </SecondaryButton>
@@ -175,7 +175,7 @@ export function AppSection() {
                         <motion.div
                           animate={{ scale: [1, 1.1, 1] }}
                           transition={{ duration: 2, repeat: Infinity }}
-                          className="w-10 h-10 bg-black/20 rounded-full flex items-center justify-center"
+                          className="flex items-center justify-center w-10 h-10 rounded-full bg-black/20"
                         >
                           <Mic className="w-5 h-5" />
                         </motion.div>
@@ -184,7 +184,7 @@ export function AppSection() {
                           <p className="text-sm opacity-80 font-open-sans">Assistant IA</p>
                         </div>
                       </div>
-                      <div className="bg-black/10 rounded-lg p-3">
+                      <div className="p-3 rounded-lg bg-black/10">
                         <p className="text-sm font-open-sans">
                           "Salut ! Dis-moi 'Verrouille la maison' pour sécuriser toutes les portes."
                         </p>
@@ -200,13 +200,13 @@ export function AppSection() {
                           whileInView={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.7 + i * 0.1, duration: 0.4 }}
                           viewport={{ once: true }}
-                          className="bg-white rounded-lg p-3 shadow-sm"
+                          className="p-3 bg-white rounded-lg shadow-sm"
                         >
                           <div
-                            className="w-3 h-3 rounded-full mb-2"
+                            className="w-3 h-3 mb-2 rounded-full"
                             style={{ backgroundColor: card.color }}
                           />
-                          <p className="text-xs text-gray-500 mb-1 font-open-sans">{card.label}</p>
+                          <p className="mb-1 text-xs text-gray-500 font-open-sans">{card.label}</p>
                           <p className="font-poppins text-[#0F172A]">{card.value}</p>
                         </motion.div>
                       ))}
@@ -220,7 +220,7 @@ export function AppSection() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1 + i * 0.1, duration: 0.4 }}
                         viewport={{ once: true }}
-                        className="bg-white rounded-lg p-3 flex items-center justify-between shadow-sm mb-2"
+                        className="flex items-center justify-between p-3 mb-2 bg-white rounded-lg shadow-sm"
                       >
                         <span className="font-open-sans text-[#0F172A]">{label}</span>
                         <div className={`w-10 h-6 rounded-full relative ${i === 0 ? "bg-[#19B7A5]" : "bg-gray-300"}`}>

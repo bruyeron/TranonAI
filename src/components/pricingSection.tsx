@@ -84,20 +84,20 @@ const appPlans = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="relative py-24 bg-[#0F172A] overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section id="pricing" className="relative py-24 bg-[#F2F4F8] overflow-hidden">
+      <div className="container px-4 mx-auto">
         {/* Titre principal */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="mb-20 text-center"
         >
-          <h2 className="text-6xl lg:text-6xl font-bold text-white mb-4">
+          <h2 className="mb-4 text-6xl font-bold text-black lg:text-6xl">
             Choisissez <span className="text-[#19B7A5]">votre solution</span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-300">
+          <p className="text-lg text-gray-500 md:text-xl">
             Des options flexibles pour répondre à tous les besoins et budgets
           </p>
         </motion.div>
@@ -108,12 +108,12 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-2xl md:text-3xl font-semibold text-center text-white mb-12"
+          className="mb-12 text-2xl font-semibold text-center text-black md:text-3xl"
         >
           Kits Produits
         </motion.h3>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto mb-20">
+        <div className="grid max-w-5xl grid-cols-1 gap-8 mx-auto mb-20 sm:grid-cols-2">
           {productPlans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -125,7 +125,7 @@ export function PricingSection() {
               className="relative"
             >
               {plan.highlight && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                <div className="absolute -translate-x-1/2 -top-4 left-1/2">
                   <span className="bg-[#19B7A5] text-black px-4 py-1 rounded-full text-sm">
                     Recommandé
                   </span>
@@ -142,7 +142,7 @@ export function PricingSection() {
                 {/* Header plan */}
                 <div className="flex items-center gap-4 mb-6">
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center"
+                    className="flex items-center justify-center w-12 h-12 rounded-xl"
                     style={{ backgroundColor: `${plan.color}20` }}
                   >
                     <plan.icon className="w-6 h-6" style={{ color: plan.color }} />
@@ -156,14 +156,14 @@ export function PricingSection() {
                 {/* Prix */}
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl text-white font-bold">{plan.price}</span>
+                    <span className="text-3xl font-bold text-white">{plan.price}</span>
                     <span className="text-lg text-gray-400">{plan.currency}</span>
                   </div>
                   <p className="text-sm text-gray-400">{plan.period}</p>
                 </div>
 
                 {/* Fonctionnalités */}
-                <ul className="space-y-4 mb-8">
+                <ul className="mb-8 space-y-4">
                   {plan.features.map((feature, idx) => (
                     <motion.li
                       key={feature}
@@ -204,12 +204,12 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-2xl md:text-3xl font-semibold text-center text-white mb-12"
+          className="mb-12 text-2xl font-semibold text-center text-black md:text-3xl"
         >
           Plans Application
         </motion.h3>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid max-w-5xl grid-cols-1 gap-8 mx-auto sm:grid-cols-2">
           {appPlans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -221,7 +221,7 @@ export function PricingSection() {
               className="relative"
             >
               {plan.highlight && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                <div className="absolute -translate-x-1/2 -top-4 left-1/2">
                   <span className="bg-[#FBAF42] text-black px-4 py-1 rounded-full text-sm">
                     Populaire
                   </span>
@@ -238,7 +238,7 @@ export function PricingSection() {
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-6">
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center"
+                    className="flex items-center justify-center w-12 h-12 rounded-xl"
                     style={{ backgroundColor: `${plan.color}20` }}
                   >
                     <plan.icon className="w-6 h-6" style={{ color: plan.color }} />
@@ -252,14 +252,14 @@ export function PricingSection() {
                 {/* Pricing */}
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl text-white font-bold">{plan.price}</span>
+                    <span className="text-3xl font-bold text-white">{plan.price}</span>
                     <span className="text-lg text-gray-400">{plan.currency}</span>
                   </div>
                   <p className="text-sm text-gray-400">{plan.period}</p>
                 </div>
 
                 {/* Features */}
-                <ul className="space-y-4 mb-8">
+                <ul className="mb-8 space-y-4">
                   {plan.features.map((feature, idx) => (
                     <motion.li
                       key={feature}

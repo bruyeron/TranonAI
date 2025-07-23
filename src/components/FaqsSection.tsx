@@ -49,21 +49,21 @@ const faqs: FAQ[] = [
 
 function FAQSection() {
   return (
-    <section id="faq" className="relative bg-[#0F172A] py-24 overflow-hidden">
-      <div className="max-w-4xl mx-auto px-6">
+    <section id="faq" className="relative bg-[#F2F4F8] py-24 overflow-hidden">
+      <div className="max-w-4xl px-6 mx-auto">
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
           <div className="inline-flex items-center justify-center w-16 h-16 bg-[#FBAF42]/20 rounded-2xl mb-6">
             <HelpCircle className="w-8 h-8 text-[#FBAF42]" />
           </div>
-          <h2 className="text-6xl lg:text-6xl font-bold text-white mb-4">Questions <span className="text-[#19B7A5]">fréquentes</span></h2>
-          <p className="text-gray-400 text-lg">
+          <h2 className="mb-4 text-6xl font-bold text-black lg:text-6xl">Questions <span className="text-[#19B7A5]">fréquentes</span></h2>
+          <p className="text-lg text-gray-500">
             Trouvez rapidement les réponses aux questions les plus courantes sur Tranon'AI
           </p>
         </motion.div>
@@ -86,12 +86,12 @@ function FAQSection() {
               >
                 <AccordionItem
                   value={`item-${index}`}
-                  className="bg-[#1E293B] border border-[#334155] rounded-xl px-6 hover:border-[#19B7A5]/70 transition-all"
+                  className="bg-gray-300 border border-[#334155] rounded-xl px-6 hover:border-[#19B7A5]/70 transition-all"
                 >
-                  <AccordionTrigger className="text-left text-white py-6 hover:text-[#19B7A5] transition-colors [&[data-state=open]]:text-[#19B7A5]">
+                  <AccordionTrigger className="text-left text-black py-6 hover:text-[#19B7A5] transition-colors [&[data-state=open]]:text-[#19B7A5]">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-300 pb-6 leading-relaxed">
+                  <AccordionContent className="pb-6 leading-relaxed text-gray-500">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -106,14 +106,14 @@ function FAQSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="mt-16 text-center"
         >
           <div className="p-8 rounded-2xl border border-[#19B7A5]/20 bg-[#19B7A5]/30">
-            <h3 className="text-xl text-white mb-2">Vous ne trouvez pas votre réponse ?</h3>
-            <p className="text-gray-300 mb-6">
+            <h3 className="mb-2 text-xl text-black">Vous ne trouvez pas votre réponse ?</h3>
+            <p className="mb-6 text-gray-500">
               Notre équipe support est là pour vous aider avec toutes vos questions
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

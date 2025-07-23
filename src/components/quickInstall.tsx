@@ -17,16 +17,16 @@ const FeatureItem = ({ title, description }: FeatureProps) => (
   >
     <Check className="bg-[#FBAF42] rounded-full p-1 w-6 h-6 mt-1" />
     <div>
-      <p className="text-white font-bold text-lg">{title}</p>
-      <p className="text-[#9CA3AF] font-normal text-base">{description}</p>
+      <p className="text-lg font-bold text-black">{title}</p>
+      <p className="text-base font-normal text-gray-500">{description}</p>
     </div>
   </motion.li>
 );
 
 function QuickInstall() {
   return (
-    <section className="flex justify-center bg-[#0F172A] px-6 md:px-10 py-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center max-w-7xl w-full">
+    <section className="flex justify-center bg-[#F2F4F8] px-6 md:px-10 py-20">
+      <div className="grid items-center w-full grid-cols-1 gap-16 md:grid-cols-2 max-w-7xl">
         {/* LEFT TEXT CONTENT */}
         <motion.div
           className="pl-2"
@@ -35,12 +35,12 @@ function QuickInstall() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
+          <h1 className="text-4xl font-bold leading-tight text-black sm:text-5xl md:text-6xl">
             Installation{" "}
             <span className="text-[#19B7A5]">simple & rapide</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-[#9CA3AF] leading-relaxed mt-6 mb-8">
+          <p className="mt-6 mb-8 text-lg leading-relaxed text-gray-500 sm:text-xl">
             Le hub Tranon'AI se connecte à votre système électrique existant
             en quelques minutes, pas en heures. Aucun câblage à refaire,
             aucun travaux, aucun tracas. Juste une automatisation intelligente

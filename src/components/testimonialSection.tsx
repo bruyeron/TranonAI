@@ -61,20 +61,20 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="py-24 bg-[#1E293B] text-[#ffffff] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-[#F2F4F8] text-black relative overflow-hidden">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Title & Description */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <h2 className="text-6xl sm:text-4xl lg:text-6xl font-bold font-poppins">
+          <h2 className="text-6xl font-bold sm:text-4xl lg:text-6xl font-poppins">
             Ce que disent <span className="text-[#19B7A5]">nos client</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto mt-4 font-open-sans">
+          <p className="max-w-3xl mx-auto mt-4 text-base text-gray-500 sm:text-lg font-open-sans">
             Découvrez les témoignages de familles malgaches qui ont adopté Tranon'AI
           </p>
         </motion.div>
@@ -111,7 +111,7 @@ export function TestimonialsSection() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.2, duration: 0.6 }}
-                      className="text-base md:text-lg text-gray-300 leading-relaxed font-open-sans mb-6"
+                      className="mb-6 text-base leading-relaxed text-gray-500 md:text-lg font-open-sans"
                     >
                       "{t.content}"
                     </motion.p>
@@ -134,7 +134,7 @@ export function TestimonialsSection() {
                       {t.avatar}
                     </div>
                     <div>
-                      <h4 className="text-base md:text-lg font-poppins font-semibold">{t.name}</h4>
+                      <h4 className="text-base font-semibold md:text-lg font-poppins">{t.name}</h4>
                       <p className="text-sm text-gray-600">{t.role}</p>
                     </div>
                   </motion.div>
@@ -144,7 +144,7 @@ export function TestimonialsSection() {
           </div>
 
           {/* Controls */}
-          <div className="flex justify-center items-center gap-6 mt-8">
+          <div className="flex items-center justify-center gap-6 mt-8">
             <Button
               variant="outline"
               size="icon"
@@ -189,7 +189,7 @@ export function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto text-center"
+          className="grid max-w-3xl grid-cols-1 gap-6 mx-auto text-center sm:grid-cols-3"
         >
           {[
             { number: "500+", label: "Familles équipées" },

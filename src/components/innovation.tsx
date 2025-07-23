@@ -28,10 +28,10 @@ const InnovationCard = ({
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div
-        className="rounded-2xl p-6 h-full flex flex-col justify-between"
+        className="flex flex-col justify-between h-full p-6 rounded-2xl"
         style={{ background: gradient }}
       >
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex items-center justify-between mb-4">
           {icon}
           <span className="text-[#FBAF42] text-sm bg-[#FBAF4250] rounded-full px-3 py-1">
             {badge}
@@ -91,13 +91,13 @@ function Innovation() {
   ];
 
   return (
-    <section className="flex flex-col items-center bg-[#0F172A] py-16 px-4 sm:px-6 lg:px-12">
+    <section className="flex flex-col items-center bg-[#F2F4F8] py-16 px-4 sm:px-6 lg:px-12">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-white font-bold text-3xl sm:text-5xl md:text-6xl text-center mb-4"
+        className="mb-4 text-3xl font-bold text-center text-black sm:text-5xl md:text-6xl"
       >
         Cutting-Edge <span className="text-[#19B7A5]">Innovations</span>
       </motion.h1>
@@ -107,13 +107,13 @@ function Innovation() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-[#9CA3AF] text-base sm:text-lg md:text-xl text-center max-w-3xl mb-12"
+        className="max-w-3xl mb-12 text-base text-center text-gray-500 sm:text-lg md:text-xl"
       >
         Powered by breakthrough technologies that make smart living accessible,
         sustainable, and secure for every Malagasy household.
       </motion.p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-8 w-full max-w-6xl">
+      <div className="grid w-full max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-2">
         {cards.map((card, i) => (
           <InnovationCard key={i} {...card} />
         ))}

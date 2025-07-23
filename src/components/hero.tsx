@@ -51,9 +51,9 @@ function HeroSection() {
             </div>
 
             {/* Contenu principal */}
-            <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-white bg-[linear-gradient(135deg,#0F172AAA_0%,#1E293BAA_50%,#0F172A_100%)] w-full">
+            <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-black bg-[linear-gradient(135deg,#0F172A31_0%,#1E293BAA_50%,#0F172A31_100%)] w-full">
                 <motion.h1
-                    className="font-bold text-[48px] sm:text-[64px] md:text-[80px] lg:text-[96px] leading-tight text-center py-2"
+                    className="font-bold text-[48px] sm:text-[64px] md:text-[80px] lg:text-[96px] leading-tight text-center pt-14 pb-2"
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
@@ -62,7 +62,7 @@ function HeroSection() {
                 </motion.h1>
 
                 <motion.p
-                    className="text-xl sm:text-2xl md:text-3xl text-center leading-snug py-2"
+                    className="py-2 text-xl leading-snug text-center text-gray-300 sm:text-2xl md:text-3xl"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
@@ -81,7 +81,7 @@ function HeroSection() {
                 </motion.p>
 
                 <motion.div
-                    className="flex flex-col sm:flex-row gap-4 mt-4"
+                    className="flex flex-col gap-4 mt-4 sm:flex-row"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.5 }}
@@ -90,7 +90,7 @@ function HeroSection() {
                     <SecondaryButton>Regarder la démo</SecondaryButton>
                 </motion.div>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-20 mt-8 w-full max-w-5xl px-4 text-center">
+                <div className="flex flex-col items-center justify-center w-full max-w-5xl gap-20 px-4 mt-8 text-center sm:flex-row">
                     {statsData.map(({ value, description }) => (
                         <StatItem key={value} value={value} description={description}/>
                     ))}

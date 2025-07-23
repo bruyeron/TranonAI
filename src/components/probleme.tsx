@@ -51,32 +51,32 @@ function ProblemCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="border border-[#334155] rounded-2xl p-6 bg-[#0F172A] hover:border-[#19B7A5] hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer"
+      className="border border-[#334155] rounded-2xl p-6 bg-gray-400 hover:border-[#19B7A5] hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer"
     >
       <Icon
         className="rounded-[5px] p-1.5 w-10 h-10 text-white"
         style={{ background: gradient }}
         aria-label={title}
       />
-      <h2 className="text-white font-semibold text-lg sm:text-xl my-3 hover:text-[#19B7A5] transition-colors duration-200">
+      <h2 className="text-black font-semibold text-lg sm:text-xl my-3 hover:text-[#19B7A5] transition-colors duration-200">
         {title}
       </h2>
-      <p className="text-[#9CA3AF] text-sm sm:text-base">{description}</p>
+      <p className="text-sm text-gray-600 sm:text-base">{description}</p>
     </motion.div>
   );
 }
 
 function Probleme() {
   return (
-    <section className="flex flex-col items-center bg-[#1E293B] py-16 px-4 sm:px-6 lg:px-10">
+    <section className="flex flex-col items-center bg-[#F2F4F8] py-16 px-4 sm:px-6 lg:px-10">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-white font-bold text-3xl sm:text-5xl md:text-6xl text-center mb-4"
+        className="mb-4 text-3xl font-bold text-center text-black sm:text-5xl md:text-6xl"
       >
-        Les problèmes que nous résolvons
+        Les problèmes que <span className="text-[#19B7A5]">nous résolvons</span>
       </motion.h1>
 
       <motion.p
@@ -84,13 +84,13 @@ function Probleme() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="text-[#9CA3AF] text-base sm:text-lg md:text-xl text-center max-w-3xl mb-12"
+        className="max-w-3xl mb-12 text-base text-center text-gray-500 sm:text-lg md:text-xl"
       >
         Every Malagasy homeowner faces these daily challenges. Tranon'AI
         transforms these pain points into intelligent solutions.
       </motion.p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl">
+      <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl">
         {problems.map((props, index) => (
           <ProblemCard key={index} {...props} />
         ))}

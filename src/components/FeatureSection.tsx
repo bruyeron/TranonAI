@@ -53,7 +53,7 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="py-16 sm:py-24 bg-[#0F172A] relative overflow-hidden w-full w-fullmax-w-screen">
+    <section className="py-16 sm:py-24 bg-[#0F172A] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Titre */}
         <motion.div

@@ -4,7 +4,7 @@ function Footer() {
   const linkStyle = "text-[#9CA3AF] font-normal text-base hover:text-[#FBAF42] transition";
 
   return (
-    <footer className="bg-[#0F172A] border-t-4 border-[#334155] pb-10 w-full w-fullmax-w-screen">
+    <footer className="bg-[#0F172A] border-t-4 border-[#334155] pb-10">
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 py-16 px-4 sm:px-10 w-full max-w-[1200px] mx-auto border-b-2 border-[#334155]">
         {/* Brand + Socials */}
         <div>

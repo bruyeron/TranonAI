@@ -61,7 +61,7 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="w-full py-24 bg-[#1E293B] text-[#ffffff] relative overflow-hidden w-fullmax-w-screen">
+    <section className="py-24 bg-[#1E293B] text-[#ffffff] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title & Description */}
         <motion.div

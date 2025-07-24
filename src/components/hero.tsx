@@ -27,7 +27,7 @@ function HeroSection() {
     ];
 
     return (
-        <div className="relative bg-[url('./assets/background.jpg')] bg-cover bg-center w-full min-h-screen overflow-hidden">
+        <div className="relative bg-[url('./assets/background.jpg')] bg-cover bg-center w-full min-h-screen overflow-hidden w-fullmax-w-screen">
             {/* Bulles animées */}
             <div className="absolute inset-0 z-0">
                 {[...Array(20)].map((_, i) => (

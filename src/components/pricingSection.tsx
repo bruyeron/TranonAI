@@ -84,7 +84,7 @@ const appPlans = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="relative py-24 bg-[#0F172A] overflow-hidden w-full">
+    <section id="pricing" className="relative py-24 bg-[#0F172A] overflow-hidden w-full w-fullmax-w-screen">
       <div className="container mx-auto px-4">
         {/* Titre principal */}
         <motion.div

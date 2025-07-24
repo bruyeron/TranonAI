@@ -25,7 +25,7 @@ const FeatureItem = ({ title, description }: FeatureProps) => (
 
 function QuickInstall() {
   return (
-    <section className="flex justify-center bg-[#0F172A] px-6 md:px-10 py-20 w-full">
+    <section className="flex justify-center bg-[#0F172A] px-6 md:px-10 py-20 w-full w-fullmax-w-screen">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center max-w-7xl w-full">
         {/* LEFT TEXT CONTENT */}
         <motion.div

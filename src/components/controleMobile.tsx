@@ -1,5 +1,4 @@
 import { Smartphone, House, ChartPie, ShieldCheck } from "lucide-react";
-import { SecondaryButton } from "./button";
 import { motion } from "framer-motion";
 
 const features = [
@@ -113,14 +112,6 @@ function ControleMobile() {
             </motion.div>
           ))}
 
-          <div className="flex flex-col gap-3 mt-4 sm:flex-row">
-            <SecondaryButton className="bg-[#334155] w-full sm:w-auto">
-              Téléchargez pour iOS
-            </SecondaryButton>
-            <SecondaryButton className="bg-[#334155] w-full sm:w-auto">
-              Téléchargez pour Android
-            </SecondaryButton>
-          </div>
         </motion.div>
       </div>
     </section>

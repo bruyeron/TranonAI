@@ -10,12 +10,10 @@ import { FeaturesSection } from "./components/FeatureSection";
 import { PricingSection } from "./components/pricingSection";
 import { TestimonialsSection } from "./components/testimonialSection";
 import { AppSection } from "./components/appSection";
-import NavBar from "./components/navbar";
 
 function App() {
   return (
     <>
-      <NavBar />
       <HeroSection />
       <Probleme />
       <FeaturesSection />

@@ -49,7 +49,7 @@ const faqs: FAQ[] = [
 
 function FAQSection() {
   return (
-    <section id="faq" className="relative bg-[#0F172A] py-24 overflow-hidden">
+    <section id="faq" className="relative bg-[#0F172A] py-24 overflow-hidden w-full">
       <div className="max-w-4xl mx-auto px-6">
         {/* Title */}
         <motion.div

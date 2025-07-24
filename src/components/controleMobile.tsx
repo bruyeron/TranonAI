@@ -43,7 +43,7 @@ function ControleMobile() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="font-bold text-3xl sm:text-5xl lg:text-6xl text-white text-center max-w-3xl"
+        className="max-w-3xl text-3xl font-bold text-center text-white sm:text-5xl lg:text-6xl"
       >
         Contrôlez tout{" "}
         <span className="text-[#19B7A5]">depuis votre téléphone</span>
@@ -60,7 +60,7 @@ function ControleMobile() {
         maison dans votre poche. Simple, intuitive et pensée pour les familles malgaches.
       </motion.p>
 
-      <div className="flex flex-col lg:flex-row gap-10 mt-14 items-center justify-center w-full max-w-7xl">
+      <div className="flex flex-col items-center justify-center w-full gap-10 lg:flex-row mt-14 max-w-7xl">
         {/* IMAGE MOBILE */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -69,7 +69,7 @@ function ControleMobile() {
           viewport={{ once: true }}
           className="rounded-[24px] w-[260px] sm:w-[300px] md:w-[340px] lg:w-[384px] aspect-[9/16] bg-cover bg-center relative"
           style={{
-            backgroundImage: `url(${new URL("../assets/tranonAI-mobileApp.jpg", import.meta.url).href})`,
+            backgroundImage: `url(${new URL("../assets/prototype.jpg", import.meta.url).href})`,
           }}
         >
           <Smartphone className="bg-[#FBAF42] w-16 h-16 sm:w-18 sm:h-18 p-4 sm:p-5 rounded-full absolute -top-7 -right-5" />
@@ -81,7 +81,7 @@ function ControleMobile() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex flex-col gap-6 w-full max-w-2xl"
+          className="flex flex-col w-full max-w-2xl gap-6"
         >
           {features.map((feature, idx) => (
             <motion.div
@@ -96,10 +96,10 @@ function ControleMobile() {
             >
               {feature.icon}
               <div>
-                <p className="font-bold text-lg sm:text-xl text-white leading-snug">
+                <p className="text-lg font-bold leading-snug text-white sm:text-xl">
                   {feature.title}{" "}
                   <span
-                    className="px-2 py-1 text-xs font-normal rounded-full ml-2"
+                    className="px-2 py-1 ml-2 text-xs font-normal rounded-full"
                     style={{
                       backgroundColor: feature.badgeColor,
                       color: "#0F172A",
@@ -113,7 +113,7 @@ function ControleMobile() {
             </motion.div>
           ))}
 
-          <div className="flex flex-col sm:flex-row gap-3 mt-4">
+          <div className="flex flex-col gap-3 mt-4 sm:flex-row">
             <SecondaryButton className="bg-[#334155] w-full sm:w-auto">
               Téléchargez pour iOS
             </SecondaryButton>

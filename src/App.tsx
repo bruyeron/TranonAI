@@ -16,10 +16,10 @@ function App() {
     <>
       <HeroSection />
       <Probleme />
-      <FeaturesSection />
-      <QuickInstall />
       <ControleMobile />
       <AppSection />
+      <FeaturesSection />
+      <QuickInstall />
       <Innovation />
       <PricingSection />
       <TestimonialsSection />

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import MainButton, { SecondaryButton } from "./button";
+import backGround from "../assets/background.jpg";
 
 type StatItemProps = {
     value: string;
@@ -27,7 +28,10 @@ function HeroSection() {
     ];
 
     return (
-        <div className="relative bg-[url('./assets/background.jpg')] bg-cover bg-center w-full min-h-screen overflow-hidden">
+        <div 
+        className="relative bg-cover bg-center w-full min-h-screen overflow-hidden"
+        style={{ backgroundImage: `url(${backGround})` }}
+        >
             {/* Bulles animées */}
             <div className="absolute inset-0 z-0">
                 {[...Array(20)].map((_, i) => (

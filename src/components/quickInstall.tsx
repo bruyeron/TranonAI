@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import MainButton from "./button";
 import { motion } from "framer-motion";
+import PrototypeTranonai from "../assets/Prototype-TranonAI.jpg";
 
 type FeatureProps = {
   title: string;
@@ -77,7 +78,7 @@ function QuickInstall() {
         <motion.div
           className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] bg-cover bg-center rounded-2xl shadow-md"
           style={{
-            backgroundImage: "url('/src/assets/Prototype-TranonAI.jpg')",
+            backgroundImage: `url(${PrototypeTranonai})`,
           }}
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}

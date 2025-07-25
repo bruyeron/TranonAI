@@ -1,5 +1,6 @@
 import { Smartphone, House, ChartPie, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
+import prototype from "../assets/prototype.jpg";
 
 const features = [
   {
@@ -68,7 +69,7 @@ function ControleMobile() {
           viewport={{ once: true }}
           className="rounded-[24px] w-[260px] sm:w-[300px] md:w-[340px] lg:w-[384px] aspect-[9/16] bg-cover bg-center relative"
           style={{
-            backgroundImage: `url(${new URL("../assets/prototype.jpg", import.meta.url).href})`,
+            backgroundImage: `url(${prototype})`,
           }}
         >
           <Smartphone className="bg-[#FBAF42] w-16 h-16 sm:w-18 sm:h-18 p-4 sm:p-5 rounded-full absolute -top-7 -right-5" />

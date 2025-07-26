@@ -67,7 +67,7 @@ function HeroSection() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
                 >
-                    Chez vous même quand vous n'y êtes pas
+                    Gardez le contrôle où que vous soyez
                 </motion.p>
 
                 <motion.p

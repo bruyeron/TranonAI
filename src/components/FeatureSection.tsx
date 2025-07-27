@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { motion } from "framer-motion";
 import {
@@ -16,7 +16,9 @@ const features = [
     subtitle: "Protection complète 24h/24",
     icon: Shield,
     color: "#19B7A5",
+    darkColor: "#5EEAD4", // Nouvelle couleur pour le mode sombre
     bgColor: "#19B7A511",
+    darkBgColor: "#5EEAD411", // Nouvelle couleur de fond pour le mode sombre
     devices: [
       { name: "Serrure intelligente", icon: Lock, description: "Verrouillage automatique et contrôle à distance" },
       { name: "Caméra de surveillance", icon: Camera, description: "Monitoring HD avec vision nocturne" },
@@ -29,7 +31,9 @@ const features = [
     subtitle: "Votre bien-être avant tout",
     icon: Heart,
     color: "#FBAF42",
+    darkColor: "#FBAF42", // La couleur reste la même pour l'orange
     bgColor: "#FBAF4211",
+    darkBgColor: "#FBAF4211", // La couleur de fond reste la même
     devices: [
       { name: "Anti-moustiques ultrasonique", icon: Bug, description: "Protection naturelle contre les insectes" },
       { name: "Détecteur de fuite de gaz", icon: AlertTriangle, description: "Alerte précoce pour votre sécurité" },
@@ -42,7 +46,9 @@ const features = [
     subtitle: "Optimisation énergétique intelligente",
     icon: Activity,
     color: "#19B7A5",
+    darkColor: "#5EEAD4", // Nouvelle couleur pour le mode sombre
     bgColor: "#F5F5F711",
+    darkBgColor: "#F5F5F711", // La couleur de fond reste la même (neutre)
     devices: [
       { name: "Compteur d'eau intelligent", icon: Droplets, description: "Suivi en temps réel de la consommation" },
       { name: "Compteur électrique", icon: Zap, description: "Monitoring énergétique précis" },
@@ -53,7 +59,8 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="py-16 sm:py-24 bg-[#0F172A] relative overflow-hidden">
+    // La section principale a maintenant des classes pour les deux modes
+    <section className="py-16 sm:py-24 bg-white dark:bg-[#0F172A] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Titre */}
         <motion.div
@@ -63,10 +70,10 @@ export function FeaturesSection() {
           viewport={{ once: true }}
           className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-poppins font-bold text-white mb-4">
-            Trois modules, une <span className="text-[#19B7A5]">solution complète</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-poppins font-bold text-gray-900 dark:text-white mb-4">
+            Trois modules, une <span className="text-[#19B7A5] dark:text-[#5EEAD4]">solution complète</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-300 font-open-sans max-w-3xl mx-auto px-2">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-open-sans max-w-3xl mx-auto px-2">
             Chaque module est conçu pour être modulaire et personnalisable selon vos besoins et votre budget.
           </p>
         </motion.div>
@@ -85,18 +92,28 @@ export function FeaturesSection() {
               {/* Texte */}
               <div className={`${i % 2 === 1 ? "lg:order-2" : ""}`}>
                 <div
-                  className="inline-flex items-center px-4 py-2 rounded-full mb-4 max-w-max"
+                  className="inline-flex items-center px-4 py-2 rounded-full mb-4 max-w-max transition-colors"
                   style={{
-                    backgroundColor: `${feature.bgColor}50`,
-                    border: `1px solid ${feature.color}50`,
+                    // Utilisation des couleurs conditionnelles
+                    backgroundColor: `rgb(0,0,0,0.1)`, // Couleur par défaut plus neutre
+                    border: `1px solid ${feature.color}`,
                   }}
+                  // Utilisation de la logique de thème pour les couleurs de fond et de bordure
                 >
-                  <feature.icon className="w-5 h-5 mr-2" style={{ color: feature.color}} />
-                  <span className="text-sm font-open-sans" style={{ color: feature.color }}>
-                    {feature.subtitle}
-                  </span>
+                  <div
+                    style={{
+                      backgroundColor: `var(--feature-bg-color, ${feature.bgColor})`,
+                      border: `1px solid var(--feature-border-color, ${feature.color})`,
+                    }}
+                    className="inline-flex items-center px-4 py-2 rounded-full mb-4 max-w-max"
+                  >
+                    <feature.icon className="w-5 h-5 mr-2" style={{ color: feature.color }} />
+                    <span className="text-sm font-open-sans" style={{ color: feature.color }}>
+                      {feature.subtitle}
+                    </span>
+                  </div>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-poppins text-white mb-6">{feature.title}</h3>
+                <h3 className="text-2xl sm:text-3xl font-poppins text-gray-900 dark:text-white mb-6">{feature.title}</h3>
 
                 <div className="space-y-5 sm:space-y-6">
                   {feature.devices.map((device, j) => (
@@ -108,8 +125,8 @@ export function FeaturesSection() {
                         <device.icon className="w-4 h-4 sm:w-6 sm:h-6" style={{ color: feature.color }} />
                       </div>
                       <div>
-                        <h4 className="text-base sm:text-lg text-white font-poppins">{device.name}</h4>
-                        <p className="text-gray-400 font-open-sans text-sm sm:text-base">{device.description}</p>
+                        <h4 className="text-base sm:text-lg text-gray-900 dark:text-white font-poppins">{device.name}</h4>
+                        <p className="text-gray-500 dark:text-gray-400 font-open-sans text-sm sm:text-base">{device.description}</p>
                       </div>
                     </div>
                   ))}
@@ -118,7 +135,7 @@ export function FeaturesSection() {
 
               {/* Visualisation */}
               <div className={`${i % 2 === 1 ? "lg:order-1" : ""}`}>
-                <Card className="bg-gradient-to-br from-[#1E293B] to-[#0F172A] border border-gray-700 p-5 sm:p-6">
+                <Card className="bg-gradient-to-br from-[#E2E8F0] to-[#F1F5F9] border border-gray-300 dark:from-[#1E293B] dark:to-[#0F172A] dark:border-gray-700 p-5 sm:p-6">
                   <div className="flex items-center justify-between mb-5 sm:mb-6">
                     <div className="flex items-center gap-3">
                       <div
@@ -128,8 +145,8 @@ export function FeaturesSection() {
                         <feature.icon className="w-4 h-4 sm:w-6 sm:h-6" style={{ color: feature.color }} />
                       </div>
                       <div>
-                        <h4 className="font-poppins text-white text-sm sm:text-base">Tranon'AI</h4>
-                        <p className="text-xs sm:text-sm text-gray-400 font-open-sans">{feature.title}</p>
+                        <h4 className="font-poppins text-gray-900 dark:text-white text-sm sm:text-base">Tranon'AI</h4>
+                        <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-open-sans">{feature.title}</p>
                       </div>
                     </div>
                     <div className="flex gap-1">
@@ -143,20 +160,20 @@ export function FeaturesSection() {
                     {feature.devices.map((device, k) => (
                       <div
                         key={k}
-                        className="bg-[#0F172A] p-3 rounded-lg border border-gray-700 text-center"
+                        className="bg-[#F1F5F9] border border-gray-300 dark:bg-[#0F172A] dark:border-gray-700 p-3 rounded-lg text-center"
                       >
                         <device.icon className="w-4 h-4 sm:w-6 sm:h-6 mx-auto mb-1 sm:mb-2" style={{ color: feature.color }} />
-                        <p className="text-xs sm:text-sm text-gray-300 font-open-sans">{device.name}</p>
+                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 font-open-sans">{device.name}</p>
                       </div>
                     ))}
                   </div>
 
                   <div>
                     <div className="flex justify-between text-xs sm:text-sm font-open-sans">
-                      <span className="text-gray-400">Status</span>
-                      <span className="text-green-400">Actif</span>
+                      <span className="text-gray-500 dark:text-gray-400">Status</span>
+                      <span className="text-green-600 dark:text-green-400">Actif</span>
                     </div>
-                    <div className="h-2 bg-gray-700 rounded-full overflow-hidden mt-1">
+                    <div className="h-2 bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden mt-1">
                       <div
                         className="h-full rounded-full"
                         style={{ backgroundColor: feature.color, width: "85%" }}
@@ -170,9 +187,9 @@ export function FeaturesSection() {
         </div>
       </div>
 
-      {/* Effets visuels */}
-      <div className="absolute top-1/4 left-0 w-52 h-52 sm:w-64 sm:h-64 bg-[#6BE445]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-52 h-52 sm:w-64 sm:h-64 bg-[#FBAF40]/10 rounded-full blur-3xl" />
+      {/* Effets visuels - ajustement pour le mode sombre */}
+      <div className="absolute top-1/4 left-0 w-52 h-52 sm:w-64 sm:h-64 bg-[#6BE445]/10 dark:bg-[#6BE445]/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-52 h-52 sm:w-64 sm:h-64 bg-[#FBAF40]/10 dark:bg-[#FBAF40]/20 rounded-full blur-3xl" />
     </section>
   );
 }

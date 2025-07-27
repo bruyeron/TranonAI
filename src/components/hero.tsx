@@ -14,8 +14,10 @@ const StatItem = ({ value, description }: StatItemProps) => (
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
     >
-        <p className="text-[#19B7A5] font-semibold text-2xl sm:text-3xl">{value}</p>
-        <p className="text-[#9CA3AF] text-sm sm:text-base">{description}</p>
+        {/* Ajout des classes dark: pour la couleur de la valeur */}
+        <p className="text-[#19B7A5] font-semibold text-2xl sm:text-3xl dark:text-[#FBAF42]">{value}</p>
+        {/* Ajout des classes dark: pour la couleur de la description */}
+        <p className="text-[#9CA3AF] text-sm sm:text-base dark:text-[#A9B1BB]">{description}</p>
     </motion.div>
 );
 
@@ -28,12 +30,12 @@ function HeroSection() {
 
     return (
         <div className="relative bg-[url('./assets/background.jpg')] bg-cover bg-center w-full min-h-screen overflow-hidden">
-            {/* Bulles animées */}
+            {/* Bulles animées - ajustement de la couleur pour le mode sombre */}
             <div className="absolute inset-0 z-0">
                 {[...Array(20)].map((_, i) => (
                     <motion.div
                         key={i}
-                        className="absolute w-2 h-2 bg-[#0F766E] rounded-full opacity-40"
+                        className="absolute w-2 h-2 bg-[#0F766E] dark:bg-[#FBAF42] rounded-full opacity-40"
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{
                             opacity: [0, 0.6, 0],
@@ -51,7 +53,9 @@ function HeroSection() {
             </div>
 
             {/* Contenu principal */}
-            <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-white bg-[linear-gradient(135deg,#0F172AAA_0%,#1E293BAA_50%,#0F172A_100%)] w-full">
+            <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-white
+              bg-[linear-gradient(135deg,#0F172AAA_0%,#1E293BAA_50%,#0F172A_100%)]
+              dark:bg-[linear-gradient(135deg,#0F172A_0%,#000000_50%,#0F172A_100%)] w-full">
                 <motion.h1
                     className="font-bold text-[48px] sm:text-[64px] md:text-[80px] lg:text-[96px] leading-tight text-center py-2"
                     initial={{ opacity: 0, y: -50 }}
@@ -70,8 +74,9 @@ function HeroSection() {
                     Gardez le contrôle où que vous soyez
                 </motion.p>
 
+                {/* Ajout des classes dark: pour la couleur du texte */}
                 <motion.p
-                    className="text-base sm:text-lg md:text-xl text-center text-[#9CA3AF] py-4 max-w-2xl"
+                    className="text-base sm:text-lg md:text-xl text-center text-[#9CA3AF] py-4 max-w-2xl dark:text-[#A9B1BB]"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.6 }}

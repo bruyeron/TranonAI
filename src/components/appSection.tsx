@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Smartphone, Mic, Eye, Users, Settings } from "lucide-react";
-import MainButton, { SecondaryButton } from "./button";
+import MainButton from "./button";
 
 const features = [
   { icon: Eye, title: "Surveillance temps réel", desc: "Monitoring continu" },

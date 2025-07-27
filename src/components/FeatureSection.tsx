@@ -53,7 +53,7 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="py-16 sm:py-24 bg-[#0F172A] relative overflow-hidden">
+    <section className="py-16 sm:py-24 bg-[#F2F3F8] dark:bg-[#0F172A] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Titre */}
         <motion.div
@@ -63,10 +63,10 @@ export function FeaturesSection() {
           viewport={{ once: true }}
           className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-poppins font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-poppins font-bold text-black dark:text-white mb-4">
             Trois modules, une <span className="text-[#19B7A5]">solution complète</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-300 font-open-sans max-w-3xl mx-auto px-2">
+          <p className="text-lg sm:text-xl dark:text-gray-300 text-gray-500 font-open-sans max-w-3xl mx-auto px-2">
             Chaque module est conçu pour être modulaire et personnalisable selon vos besoins et votre budget.
           </p>
         </motion.div>
@@ -96,7 +96,7 @@ export function FeaturesSection() {
                     {feature.subtitle}
                   </span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-poppins text-white mb-6">{feature.title}</h3>
+                <h3 className="text-2xl sm:text-3xl font-poppins dark:text-white text-black mb-6">{feature.title}</h3>
 
                 <div className="space-y-5 sm:space-y-6">
                   {feature.devices.map((device, j) => (
@@ -108,7 +108,7 @@ export function FeaturesSection() {
                         <device.icon className="w-4 h-4 sm:w-6 sm:h-6" style={{ color: feature.color }} />
                       </div>
                       <div>
-                        <h4 className="text-base sm:text-lg text-white font-poppins">{device.name}</h4>
+                        <h4 className="text-base sm:text-lg dark:text-white text-black font-poppins">{device.name}</h4>
                         <p className="text-gray-400 font-open-sans text-sm sm:text-base">{device.description}</p>
                       </div>
                     </div>
@@ -171,8 +171,8 @@ export function FeaturesSection() {
       </div>
 
       {/* Effets visuels */}
-      <div className="absolute top-1/4 left-0 w-52 h-52 sm:w-64 sm:h-64 bg-[#6BE445]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-52 h-52 sm:w-64 sm:h-64 bg-[#FBAF40]/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-0 w-52 h-52 sm:w-64 sm:h-64 dark:bg-[#6BE445]/10 bg-[#6BE445]/40 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-52 h-52 sm:w-64 sm:h-64 dark:bg-[#FBAF40]/10  bg-[#FBAF40]/40 rounded-full blur-3xl" />
     </section>
   );
 }

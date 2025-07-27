@@ -84,7 +84,7 @@ const appPlans = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="relative py-24 bg-[#0F172A] overflow-hidden">
+    <section id="pricing" className="relative py-24 dark:bg-[#0F172A] bg-[#F2F4F8] overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Titre principal */}
         <motion.div
@@ -94,10 +94,10 @@ export function PricingSection() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-6xl lg:text-6xl font-bold text-white mb-4">
+          <h2 className="text-6xl lg:text-6xl font-bold dark:text-white text-black mb-4">
             Choisissez <span className="text-[#19B7A5]">votre solution</span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-300">
+          <p className="text-lg md:text-xl dark:text-gray-300 text-gray-500">
             Des options flexibles pour répondre à tous les besoins et budgets
           </p>
         </motion.div>
@@ -108,7 +108,7 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-2xl md:text-3xl font-semibold text-center text-white mb-12"
+          className="text-2xl md:text-3xl font-semibold text-center dark:text-white text-black mb-12"
         >
           Kits Produits
         </motion.h3>
@@ -204,7 +204,7 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-2xl md:text-3xl font-semibold text-center text-white mb-12"
+          className="text-2xl md:text-3xl font-semibold text-center dark:text-white text-black mb-12"
         >
           Plans Application
         </motion.h3>

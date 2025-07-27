@@ -20,7 +20,7 @@ const features = [
     badgeColor: "#FBAF42",
     description:
       "Suivez vos habitudes de consommation, identifiez les opportunités d'économie, et laissez l'IA vous proposer des recommandations personnalisées.",
-    bg: "#0F172A80",
+    bg: "white/20",
     border: "#334155",
   },
   {
@@ -30,20 +30,20 @@ const features = [
     badgeColor: "#FBAF42",
     description:
       "Recevez des alertes instantanées en cas d'activité inhabituelle, surveillez votre maison à distance et assurez la sécurité de votre famille à tout moment.",
-    bg: "#0F172A80",
+    bg: "white/20",
     border: "#334155",
   },
 ];
 
 function ControleMobile() {
   return (
-    <section className="bg-[#1E293B] py-16 px-4 sm:px-8 flex flex-col items-center">
+    <section className="dark:bg-[#1E293B] bg-[#F2F4F8] py-16 px-4 sm:px-8 flex flex-col items-center">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="max-w-3xl text-3xl font-bold text-center text-white sm:text-5xl lg:text-6xl"
+        className="max-w-3xl text-3xl font-bold text-center dark:text-white text-black sm:text-5xl lg:text-6xl"
       >
         Contrôlez tout{" "}
         <span className="text-[#19B7A5]">depuis votre téléphone</span>
@@ -54,7 +54,7 @@ function ControleMobile() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
         viewport={{ once: true }}
-        className="text-base sm:text-lg lg:text-xl text-[#9CA3AF] text-center mt-6 leading-relaxed max-w-2xl"
+        className="text-base sm:text-lg lg:text-xl dark:text-[#9CA3AF] text-black-600 text-center mt-6 leading-relaxed max-w-2xl"
       >
         L'application mobile Tranon'AI met l'automatisation intelligente de votre
         maison dans votre poche. Simple, intuitive et pensée pour les familles malgaches.
@@ -96,7 +96,7 @@ function ControleMobile() {
             >
               {feature.icon}
               <div>
-                <p className="text-lg font-bold leading-snug text-white sm:text-xl">
+                <p className="text-lg font-bold leading-snug dark:text-white text-black sm:text-xl">
                   {feature.title}{" "}
                   <span
                     className="px-2 py-1 ml-2 text-xs font-normal rounded-full"
@@ -108,7 +108,7 @@ function ControleMobile() {
                     {feature.badge}
                   </span>
                 </p>
-                <p className="text-sm sm:text-base text-[#9CA3AF] mt-2">{feature.description}</p>
+                <p className="text-sm sm:text-base dark:text-[#9CA3AF] text-[#717274] mt-2">{feature.description}</p>
               </div>
             </motion.div>
           ))}

@@ -37,7 +37,7 @@ function HeroSection() {
                 {[...Array(20)].map((_, i) => (
                     <motion.div
                         key={i}
-                        className="absolute w-2 h-2 bg-[#0F766E] rounded-full opacity-40"
+                        className="absolute w-2 h-2 bg-[#0F766E] rounded-full dark:opacity-40 opacity-20"
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{
                             opacity: [0, 0.6, 0],
@@ -55,9 +55,9 @@ function HeroSection() {
             </div>
 
             {/* Contenu principal */}
-            <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-white bg-[linear-gradient(135deg,#0F172AAA_0%,#1E293BAA_50%,#0F172A_100%)] w-full">
+            <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-white dark:bg-[linear-gradient(135deg,#0F172AAA_0%,#1E293BAA_50%,#0F172A_100%)] bg-[linear-gradient(135deg,#0F172A31_0%,#1E293BAA_50%,#0F172A31_100%)] w-full">
                 <motion.h1
-                    className="font-bold text-[48px] sm:text-[64px] md:text-[80px] lg:text-[96px] leading-tight text-center py-2"
+                    className="font-bold text-[48px] sm:text-[64px] md:text-[80px] lg:text-[96px] leading-tight text-center py-2 text-black dark:text-white"
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
@@ -66,12 +66,12 @@ function HeroSection() {
                 </motion.h1>
 
                 <motion.p
-                    className="text-xl sm:text-2xl md:text-3xl text-center leading-snug py-2"
+                    className="text-xl sm:text-2xl md:text-3xl text-center text-gray-300 dark:text-white leading-snug py-2"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
                 >
-                    Chez vous même quand vous n'y êtes pas
+                    Gardez le contrôle où que vous soyez.
                 </motion.p>
 
                 <motion.p

@@ -49,7 +49,7 @@ const faqs: FAQ[] = [
 
 function FAQSection() {
   return (
-    <section id="faq" className="relative bg-[#0F172A] py-24 overflow-hidden">
+    <section id="faq" className="relative dark:bg-[#0F172A] bg-[#F2F4F8] py-24 overflow-hidden">
       <div className="max-w-4xl mx-auto px-6">
         {/* Title */}
         <motion.div
@@ -62,8 +62,8 @@ function FAQSection() {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-[#FBAF42]/20 rounded-2xl mb-6">
             <HelpCircle className="w-8 h-8 text-[#FBAF42]" />
           </div>
-          <h2 className="text-6xl lg:text-6xl font-bold text-white mb-4">Questions <span className="text-[#19B7A5]">fréquentes</span></h2>
-          <p className="text-gray-400 text-lg">
+          <h2 className="text-6xl lg:text-6xl font-bold dark:text-white text-black mb-4">Questions <span className="text-[#19B7A5]">fréquentes</span></h2>
+          <p className="dark:text-gray-400 text-gray-500 text-lg">
             Trouvez rapidement les réponses aux questions les plus courantes sur Tranon'AI
           </p>
         </motion.div>
@@ -86,12 +86,12 @@ function FAQSection() {
               >
                 <AccordionItem
                   value={`item-${index}`}
-                  className="bg-[#1E293B] border border-[#334155] rounded-xl px-6 hover:border-[#19B7A5]/70 transition-all"
+                  className="dark:bg-[#1E293B] bg-gray-300 border border-[#334155] rounded-xl px-6 hover:border-[#19B7A5]/70 transition-all"
                 >
-                  <AccordionTrigger className="text-left text-white py-6 hover:text-[#19B7A5] transition-colors [&[data-state=open]]:text-[#19B7A5]">
+                  <AccordionTrigger className="text-left dark:text-white text-black py-6 hover:text-[#19B7A5] transition-colors [&[data-state=open]]:text-[#19B7A5]">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-300 pb-6 leading-relaxed">
+                  <AccordionContent className="dark:text-gray-300 text-gray-500 pb-6 leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -109,8 +109,8 @@ function FAQSection() {
           className="text-center mt-16"
         >
           <div className="p-8 rounded-2xl border border-[#19B7A5]/20 bg-[#19B7A5]/30">
-            <h3 className="text-xl text-white mb-2">Vous ne trouvez pas votre réponse ?</h3>
-            <p className="text-gray-300 mb-6">
+            <h3 className="text-xl dark:text-white text-black mb-2">Vous ne trouvez pas votre réponse ?</h3>
+            <p className="dark:text-gray-300 text-gray-500 mb-6">
               Notre équipe support est là pour vous aider avec toutes vos questions
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -136,8 +136,8 @@ function FAQSection() {
       </div>
 
       {/* Background decorations */}
-      <div className="absolute top-1/4 left-0 w-64 h-64 bg-[#6BE445]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-[#FBAF40]/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-0 w-64 h-64 dark:bg-[#6BE445]/5 bg-[#6BE445]/50 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-64 h-64 dark:bg-[#FBAF40]/5 bg-[#FBAF40]/50 rounded-full blur-3xl" />
     </section>
   );
 }

@@ -61,7 +61,7 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="py-24 bg-[#1E293B] text-[#ffffff] relative overflow-hidden">
+    <section className="py-24 dark:bg-[#1E293B] bg-[#F2F4F8] dark:text-white text-black relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title & Description */}
         <motion.div
@@ -74,7 +74,7 @@ export function TestimonialsSection() {
           <h2 className="text-6xl sm:text-4xl lg:text-6xl font-bold font-poppins">
             Ce que disent <span className="text-[#19B7A5]">nos client</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto mt-4 font-open-sans">
+          <p className="text-base sm:text-lg dark:text-gray-300 text-gray-500 max-w-3xl mx-auto mt-4 font-open-sans">
             Découvrez les témoignages de familles malgaches qui ont adopté Tranon'AI
           </p>
         </motion.div>
@@ -111,7 +111,7 @@ export function TestimonialsSection() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.2, duration: 0.6 }}
-                      className="text-base md:text-lg text-gray-300 leading-relaxed font-open-sans mb-6"
+                      className="text-base md:text-lg dark:text-gray-300 text-gray-600 leading-relaxed font-open-sans mb-6"
                     >
                       "{t.content}"
                     </motion.p>
@@ -204,15 +204,15 @@ export function TestimonialsSection() {
               viewport={{ once: true }}
             >
               <div className="text-2xl md:text-3xl font-bold text-[#19B7A5] mb-1">{stat.number}</div>
-              <p className="text-gray-300">{stat.label}</p>
+              <p className="dark:text-gray-300 text-gray-600">{stat.label}</p>
             </motion.div>
           ))}
         </motion.div>
       </div>
 
       {/* Decorative Backgrounds */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-[#6BE445]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-40 h-40 bg-[#FBAF40]/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-10 w-32 h-32 dark:bg-[#6BE445]/5 bg-[#6BE445]/50 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-40 h-40 dark:bg-[#FBAF40]/5 bg-[#FBAF40]/50 rounded-full blur-3xl" />
     </section>
   );
 }

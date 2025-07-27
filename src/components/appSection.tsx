@@ -20,7 +20,7 @@ const dashboardCards = [
 
 export function AppSection() {
   return (
-    <section className="py-24 bg-[#1E293B] text-gray-300 relative overflow-hidden">
+    <section className="py-24 bg-[#F2F4F8] dark:bg-[#1E293B] dark:text-gray-300 text-black-300 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
         {/* === LEFT CONTENT === */}
         <motion.div
@@ -55,7 +55,7 @@ export function AppSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-600 mb-8 font-open-sans"
+            className="text-xl dark:text-gray-600 text-black-600 mb-8 font-open-sans"
           >
             Une application intuitive qui met le contrôle total de votre maison dans votre poche, avec NEXORA, votre assistant IA vocal.
           </motion.p>
@@ -74,7 +74,7 @@ export function AppSection() {
               </div>
               <div>
                 <h3 className="text-xl font-poppins mb-2">NEXORA - Assistant IA Vocal</h3>
-                <p className="text-gray-300 font-open-sans mb-4">
+                <p className="dark:text-gray-300 text-black-600 font-open-sans mb-4">
                   Contrôlez votre maison par commandes vocales. Idéal pour les personnes avec des besoins d'accessibilité.
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -123,14 +123,12 @@ export function AppSection() {
             viewport={{ once: true }}
             className="flex flex-col justify-center sm:flex-row gap-4"
           >
-            <MainButton className="bg-[#19B7A5] hover:bg-[#19B7A5] text-black px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105">
-              Télécharger l'app
+            <MainButton className="bg-[#19B7A5]/40 hover:bg-[#19B7A5] border-[#19B7A5] border text-black px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105">
+              App Store
             </MainButton>
-            <SecondaryButton
-              className="border-[#FBAF40] text-[#FBAF40] hover:bg-[#FBAF40] hover:text-black px-8 py-4 rounded-lg transition-all duration-300"
-            >
-              Voir la démo
-            </SecondaryButton>
+            <MainButton className="bg-[#19B7A5]/40 hover:bg-[#19B7A5] border-[#19B7A5] border text-black px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105">
+              Google Play
+            </MainButton>
           </motion.div>
         </motion.div>
 
@@ -254,8 +252,8 @@ export function AppSection() {
       </div>
 
       {/* BG Blurs */}
-      <div className="absolute top-20 right-10 w-32 h-32 bg-[#6BE445]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-40 h-40 bg-[#FBAF40]/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-10 w-32 h-32 dark:bg-[#6BE445]/5 bg-[#6BE445]/50 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-40 h-40 dark:bg-[#FBAF40]/5 bg-[#FB4F42]/50 rounded-full blur-3xl" />
     </section>
   );
 }

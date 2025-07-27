@@ -91,13 +91,13 @@ function Innovation() {
   ];
 
   return (
-    <section className="flex flex-col items-center bg-[#0F172A] py-16 px-4 sm:px-6 lg:px-12">
+    <section className="flex flex-col items-center dark:bg-[#0F172A] bg-[#F2F4F8] py-16 px-4 sm:px-6 lg:px-12">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-white font-bold text-3xl sm:text-5xl md:text-6xl text-center mb-4"
+        className="dark:text-white text-black font-bold text-3xl sm:text-5xl md:text-6xl text-center mb-4"
       >
         Cutting-Edge <span className="text-[#19B7A5]">Innovations</span>
       </motion.h1>
@@ -107,7 +107,7 @@ function Innovation() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-[#9CA3AF] text-base sm:text-lg md:text-xl text-center max-w-3xl mb-12"
+        className="dark:text-[#9CA3AF] text-gray-500 text-base sm:text-lg md:text-xl text-center max-w-3xl mb-12"
       >
         Powered by breakthrough technologies that make smart living accessible,
         sustainable, and secure for every Malagasy household.

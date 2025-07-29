@@ -55,7 +55,7 @@ function HeroSection() {
             </div>
 
             {/* Contenu principal */}
-            <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-white dark:bg-[linear-gradient(135deg,#0F172AAA_0%,#1E293BAA_50%,#0F172A_100%)] bg-[linear-gradient(135deg,#0F172A31_0%,#1E293BAA_50%,#0F172A31_100%)] w-full">
+            <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-40 text-white dark:bg-[linear-gradient(135deg,#0F172AAA_0%,#1E293BAA_50%,#0F172A_100%)] bg-[linear-gradient(135deg,#0F172A31_0%,#1E293BAA_50%,#0F172A31_100%)] w-full">
                 <motion.h1
                     className="font-bold text-[48px] sm:text-[64px] md:text-[80px] lg:text-[96px] leading-tight text-center py-2 text-black dark:text-white"
                     initial={{ opacity: 0, y: -50 }}

@@ -91,7 +91,7 @@ function FAQSection() {
                   <AccordionTrigger className="text-left dark:text-white text-black py-6 hover:text-[#19B7A5] transition-colors [&[data-state=open]]:text-[#19B7A5]">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="dark:text-gray-300 text-gray-500 pb-6 leading-relaxed">
+                  <AccordionContent className="dark:text-gray-300 text-gray-800 pb-6 leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -136,8 +136,8 @@ function FAQSection() {
       </div>
 
       {/* Background decorations */}
-      <div className="absolute top-1/4 left-0 w-64 h-64 dark:bg-[#6BE445]/5 bg-[#6BE445]/50 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-64 h-64 dark:bg-[#FBAF40]/5 bg-[#FBAF40]/50 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-0 w-64 h-64 dark:bg-[#6BE445]/5 bg-[#6BE445]/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-64 h-64 dark:bg-[#FBAF40]/5 bg-[#FBAF40]/30 rounded-full blur-3xl" />
     </section>
   );
 }

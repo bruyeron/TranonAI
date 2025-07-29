@@ -42,8 +42,7 @@ function NavBar() {
   const [isDarkMode, setIsDarkMode] = useDarkMode();
 
   return (
-    <nav className="
-      fixed top-0 left-0 z-50 flex items-center justify-between w-full px-4 sm:px-10 py-3
+    <nav className="fixed top-0 left-0 z-50 flex items-center justify-between w-full px-4 sm:px-10 py-3
       shadow-md backdrop-blur-md transition-colors duration-300
       bg-white/90 text-gray-900
       dark:bg-gray-900/80 dark:text-white
@@ -72,7 +71,7 @@ function NavBar() {
               </a>
             </li>
           ))}
-        </ul>
+        </ul>  
       </div>
       
       {/* Le bouton du dark mode reste toujours visible */}

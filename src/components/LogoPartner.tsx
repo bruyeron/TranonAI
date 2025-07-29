@@ -23,7 +23,7 @@ export function LogoPartner() {
   `;
 
   return (
-    <div className="relative flex justify-center w-full py-6 overflow-hidden bg-gray-300 dark:bg[#0F172A]">
+    <div className="relative flex justify-center w-full py-6 overflow-hidden bg-gray-300 dark:bg-[#0F172A]">
       {/* Injecte les keyframes */}
       <style>{keyframes}</style>
 

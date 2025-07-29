@@ -1,11 +1,18 @@
+import ODCLogo from "../assets/ODC-logo.jpg";
+import AWSLogo from "../assets/aws-logo.jpg";
+import MetaSombre from "../assets/meta-sombre.jpg";
+import OSCLogo from "../assets/OSC-logo.jpg";
+import EYSombre from "../assets/EY-sombre.jpg";
+import OrangeLogo from "../assets/orange.jpg";
+
 export function LogoPartner() {
   const logos = [
-    "./src/assets/ODC-logo.jpg",
-    "./src/assets/aws-logo.jpg",
-    "./src/assets/meta-sombre.jpg",
-    "./src/assets/OSC-logo.jpg",
-    "./src/assets/EY-sombre.jpg",
-    "./src/assets/orange.jpg",
+    ODCLogo,
+    AWSLogo,
+    MetaSombre,
+    OSCLogo,
+    EYSombre,
+    OrangeLogo,
   ];
 
   const keyframes = `

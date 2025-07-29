@@ -18,7 +18,7 @@ function Footer() {
               <Icon
                 key={index}
                 strokeWidth={1}
-                className="dark:text-white text-black bg-[#1E293B] border border-[#475569] rounded-full p-2 w-10 h-10 hover:text-[#FBAF42] transition"
+                className="dark:text-white text-black bg-white dark:bg-[#1E293B] border border-[#475569] rounded-full p-2 w-10 h-10 hover:text-[#FBAF42] transition"
               />
             ))}
           </div>

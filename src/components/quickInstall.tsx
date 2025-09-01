@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Check } from "lucide-react";
 import MainButton from "./button";
 import { motion } from "framer-motion";
 import PrototypeTranonai from "../assets/Prototype-TranonAI.jpg";
+import SpecsVideo from "../assets/video/demo.mp4"; // <-- Import vidéo
 
 type FeatureProps = {
   title: string;
@@ -25,9 +27,12 @@ const FeatureItem = ({ title, description }: FeatureProps) => (
 );
 
 function QuickInstall() {
+  const [showVideo, setShowVideo] = useState(false);
+
   return (
     <section className="flex justify-center dark:bg-[#0F172A] bg-[#F2F4F8] px-6 md:px-10 py-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center max-w-7xl w-full">
+        
         {/* LEFT TEXT CONTENT */}
         <motion.div
           className="pl-2"
@@ -68,7 +73,7 @@ function QuickInstall() {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <MainButton>
+            <MainButton onClick={() => setShowVideo(true)}>
               Découvrir les spécifications techniques
             </MainButton>
           </motion.div>
@@ -93,6 +98,24 @@ function QuickInstall() {
           </p>
         </motion.div>
       </div>
+
+      {/* MODAL VIDEO */}
+      {showVideo && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4">
+          <div className="relative w-full max-w-3xl">
+            <button
+              className="absolute top-2 right-2 text-white text-3xl font-bold"
+              onClick={() => setShowVideo(false)}
+            >
+              &times;
+            </button>
+            <video width="100%" height="auto" controls autoPlay>
+              <source src={SpecsVideo} type="video/mp4" />
+              Votre navigateur ne supporte pas la vidéo HTML5.
+            </video>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

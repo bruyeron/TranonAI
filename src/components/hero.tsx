@@ -1,8 +1,10 @@
 'use client';
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import MainButton, { SecondaryButton } from "./button";
 import backGround from "../assets/background.jpg";
+import DemoVideo from "../assets/video/promo.mp4"; // <-- ta vidéo locale
 
 type StatItemProps = {
     value: string;
@@ -21,6 +23,8 @@ const StatItem = ({ value, description }: StatItemProps) => (
 );
 
 function HeroSection() {
+    const [showVideo, setShowVideo] = useState(false); // state pour la vidéo
+
     const statsData = [
         { value: "40%", description: "Économies d'énergie" },
         { value: "5min", description: "Temps d'installation" },
@@ -29,9 +33,9 @@ function HeroSection() {
 
     return (
         <div 
-        id="hero"
-        className="relative bg-cover bg-center w-full min-h-screen overflow-hidden"
-        style={{ backgroundImage: `url(${backGround})` }}
+            id="hero"
+            className="relative bg-cover bg-center w-full min-h-screen overflow-hidden"
+            style={{ backgroundImage: `url(${backGround})` }}
         >
             {/* Bulles animées */}
             <div className="absolute inset-0 z-0">
@@ -57,6 +61,7 @@ function HeroSection() {
 
             {/* Contenu principal */}
             <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-40 text-white dark:bg-[linear-gradient(135deg,#0F172AAA_0%,#1E293BAA_50%,#0F172A_100%)] bg-[linear-gradient(135deg,#0F172A31_0%,#1E293BAA_50%,#0F172A31_100%)] w-full">
+                
                 <motion.h1
                     className="font-bold text-[48px] sm:text-[64px] md:text-[80px] lg:text-[96px] leading-tight text-center py-2 text-black dark:text-white"
                     initial={{ opacity: 0, y: -50 }}
@@ -92,7 +97,7 @@ function HeroSection() {
                     transition={{ delay: 0.6, duration: 0.5 }}
                 >
                     <MainButton>Passez à la maison connectée</MainButton>
-                    <SecondaryButton>Regarder la démo</SecondaryButton>
+                    <SecondaryButton onClick={() => setShowVideo(true)}>Regarder la démo</SecondaryButton>
                 </motion.div>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-20 mt-8 w-full max-w-5xl px-4 text-center">
@@ -101,6 +106,24 @@ function HeroSection() {
                     ))}
                 </div>
             </div>
+
+            {/* Overlay vidéo */}
+            {showVideo && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4">
+                    <div className="relative w-full max-w-3xl">
+                        <button
+                            className="absolute top-2 right-2 text-white text-3xl font-bold"
+                            onClick={() => setShowVideo(false)}
+                        >
+                            &times;
+                        </button>
+                        <video width="100%" height="auto" controls autoPlay>
+                            <source src={DemoVideo} type="video/mp4" />
+                            Votre navigateur ne supporte pas la vidéo HTML5.
+                        </video>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

@@ -101,7 +101,7 @@ const appPlans = [
     highlight: true,
     badge: "Populaire",
     icon: Star,
-    color: "#FBAF40",
+    color: "#19B7A5",
   },
 ];
 

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import {
   Shield, Heart, Activity,
   Lock, Camera, AlertTriangle,
-  Bug, Flame, Droplets, Zap,
+  Wind, Flame, BatteryMedium, Zap,
   Monitor
 } from "lucide-react";
 import { Card } from "./ui/card";
@@ -18,7 +18,7 @@ const features = [
     color: "#19B7A5",
     bgColor: "#19B7A511",
     devices: [
-      { name: "Serrure intelligente", icon: Lock, description: "Verrouillage automatique et contrôle à distance" },
+      { name: "Reconnaissance faciale", icon: Lock, description: "Identification des intrus" },
       { name: "Caméra de surveillance", icon: Camera, description: "Monitoring HD avec vision nocturne" },
       { name: "Détection d'intrusion", icon: AlertTriangle, description: "Capteurs de mouvement et alertes instantanées" }
     ]
@@ -31,7 +31,7 @@ const features = [
     color: "#FBAF42",
     bgColor: "#FBAF4211",
     devices: [
-      { name: "Anti-moustiques ultrasonique", icon: Bug, description: "Protection naturelle contre les insectes" },
+      { name: "Contrôle de la qualité de l'air", icon: Wind, description: "Bomboclattt" },
       { name: "Détecteur de fuite de gaz", icon: AlertTriangle, description: "Alerte précoce pour votre sécurité" },
       { name: "Détecteur d'incendie", icon: Flame, description: "Surveillance continue et intervention rapide" }
     ]
@@ -44,7 +44,7 @@ const features = [
     color: "#19B7A5",
     bgColor: "#F5F5F711",
     devices: [
-      { name: "Compteur d'eau intelligent", icon: Droplets, description: "Suivi en temps réel de la consommation" },
+      { name: "Consommation énergétique", icon: BatteryMedium, description: "Suivi en temps réel de la consommation" },
       { name: "Compteur électrique", icon: Zap, description: "Monitoring énergétique précis" },
       { name: "Écran temps réel", icon: Monitor, description: "Dashboard avec estimation des factures" }
     ]
@@ -53,7 +53,9 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="py-16 sm:py-24 bg-[#F2F3F8] dark:bg-[#0F172A] relative overflow-hidden">
+    <section 
+    id="services"
+    className="py-16 sm:py-24 bg-[#F2F3F8] dark:bg-[#0F172A] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Titre */}
         <motion.div

@@ -1,33 +1,25 @@
-import "./index.css";
-import HeroSection from "./components/hero";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import Probleme from "./components/probleme";
-import { FeaturesSection } from "./components/FeatureSection";
-import QuickInstall from "./components/quickInstall";
-import ControleMobile from "./components/controleMobile";
-import { AppSection } from "./components/appSection";
-import Innovation from "./components/innovation";
-import { PricingSection } from "./components/pricingSection";
-import { TestimonialsSection } from "./components/testimonialSection";
-import FAQSection from "./components/FaqsSection";
 import Footer from "./components/footer";
+
+import Home from "./pages/Home";
+import { AboutSection } from "./pages/About";
+import { TeamSection } from "./pages/equipe";
 
 function App() {
   return (
-    <>
+    <Router>
       <NavBar />
-      <HeroSection />
-      <Probleme />
-      <FeaturesSection />
-      <QuickInstall />
-      <ControleMobile />
-      <AppSection />
-      <Innovation />
-      <PricingSection />
-      <TestimonialsSection />
-      <FAQSection />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<AboutSection />} />
+        <Route path="/team" element={<TeamSection />} />
+      </Routes>
+
       <Footer />
-    </>
+    </Router>
   );
 }
 

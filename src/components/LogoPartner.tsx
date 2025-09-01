@@ -28,20 +28,19 @@ export function LogoPartner() {
       <style>{keyframes}</style>
 
       <div
-        className="flex space-x-12 w-[60%]"
+        className="flex space-x-24" // plus d’espace entre les logos
         style={{
-          animation: "scroll 10s linear infinite",
-          display: "flex",
+          animation: "scroll 20s linear infinite", // vitesse plus lente et fluide
           width: "max-content",
         }}
       >
-        {/* Duplique les logos une fois pour l'effet infini */}
+        {/* on duplique juste pour continuité */}
         {[...logos, ...logos].map((logo, index) => (
           <img
             key={index}
             src={logo}
             alt={`Partenaire ${index + 1}`}
-            className="object-contain transition duration-300 h-26 hover:grayscale-0"
+            className="h-20 object-contain hover:grayscale-0 transition duration-300"
           />
         ))}
       </div>

@@ -14,7 +14,7 @@ function Footer() {
             Making every Malagasy home smarter, more efficient, and environmentally conscious.
           </p>
           <div className="flex gap-3">
-            {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
+            {[Facebook, Twitter, Instagram].map((Icon, index) => (
               <Icon
                 key={index}
                 strokeWidth={1}

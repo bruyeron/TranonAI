@@ -20,7 +20,9 @@ const dashboardCards = [
 
 export function AppSection() {
   return (
-    <section className="py-24 bg-[#F2F4F8] dark:bg-[#1E293B] dark:text-gray-300 text-black-300 relative overflow-hidden">
+    <section 
+    id="nexora"
+    className="py-24 bg-[#F2F4F8] dark:bg-[#1E293B] dark:text-gray-300 text-black-300 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
         {/* === LEFT CONTENT === */}
         <motion.div
@@ -37,7 +39,7 @@ export function AppSection() {
             className="inline-flex items-center px-4 py-2 bg-[#19B7A5]/10 border border-[#19B7A5]/20 rounded-full text-[#19B7A5] mb-8 font-open-sans"
           >
             <Smartphone className="w-4 h-4 mr-2" />
-            Application mobile
+            Decouvrez Nexora
           </motion.div>
 
           <motion.h2

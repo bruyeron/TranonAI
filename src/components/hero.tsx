@@ -29,6 +29,7 @@ function HeroSection() {
 
     return (
         <div 
+        id="hero"
         className="relative bg-cover bg-center w-full min-h-screen overflow-hidden"
         style={{ backgroundImage: `url(${backGround})` }}
         >

@@ -312,9 +312,9 @@ export function NeedsAssessmentSection({ onNavigateToEvaluation }: { onNavigateT
                           <SelectValue placeholder="Sélectionnez votre budget..." />
                         </SelectTrigger>
                         <SelectContent className={sharedInputClasses}>
-                          <SelectItem value="100000-300000">100 000 - 300 000 Ar</SelectItem>
-                          <SelectItem value="300000-500000">300 000 - 500 000 Ar</SelectItem>
-                          <SelectItem value="500000-1000000">500 000 - 1 000 000 Ar</SelectItem>
+                          <SelectItem value="100000-300000">500 000 - 600 000 AR</SelectItem>
+                          <SelectItem value="300000-500000">600 000 - 800 000 Ar</SelectItem>
+                          <SelectItem value="500000-1000000">800 000 - 1 000 000 Ar</SelectItem>
                           <SelectItem value="1000000+">Plus de 1 000 000 Ar</SelectItem>
                         </SelectContent>
                       </Select>

@@ -15,7 +15,6 @@ interface FormData {
   housingType: string;
   rooms: string;
   kitchen: string;
-  floors: string;
   occupants: string;
   priorities: string[];
   budget: string;
@@ -33,13 +32,12 @@ interface Recommendation {
   icon: any;
 }
 
-export function NeedsAssessmentSection({ onNavigateToEvaluation }: { onNavigateToEvaluation?: () => void }) {
+export function NeedsAssessmentSection() {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<FormData>({
     housingType: "",
     rooms: "",
     kitchen: "",
-    floors: "",
     occupants: "",
     priorities: [],
     budget: "",
@@ -51,7 +49,6 @@ export function NeedsAssessmentSection({ onNavigateToEvaluation }: { onNavigateT
   const generateRecommendations = () => {
     const rooms = parseInt(formData.rooms) || 0;
     const kitchen = parseInt(formData.kitchen) || 0;
-    const floors = parseInt(formData.floors) || 0;
     const occupants = parseInt(formData.occupants) || 0;
     
     const newRecommendations: Recommendation[] = [];
@@ -222,9 +219,9 @@ export function NeedsAssessmentSection({ onNavigateToEvaluation }: { onNavigateT
                       <div className="space-y-2">
                         <Label className="dark:text-gray-300 text-gray-600 text-xl">Nombre d'étage</Label>
                         <Select
-                          value={formData.floors}
+                          value={formData.rooms}
                           onValueChange={(value) =>
-                            setFormData(prev => ({ ...prev, floors: value }))
+                            setFormData(prev => ({ ...prev, rooms: value }))
                           }
                         >
                           <SelectTrigger className={sharedInputClasses}>

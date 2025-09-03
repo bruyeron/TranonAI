@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram } from "lucide-react";
 import { LogoPartner } from "./LogoPartner";
 
 function Footer() {

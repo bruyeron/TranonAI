@@ -26,62 +26,64 @@ interface TeamMember {
 // === Données de l'équipe ===
 const teamMembers: TeamMember[] = [
   {
-    name: "Ben Johnson Meik",
+    name: "ANDRIAMANARINARIVO Imbarira Ben Jonson Machiavel",
     role: "Porteur de projet",
     description:
       "Expert en IoT et intelligence artificielle avec 8 ans d'expérience dans les solutions smart home.",
     image: meikImage,
-    email: "andry@tranonai.mg",
+    email: "manarinarivo@gmail.com",
     linkedin: "#",
-    github: "#",
+    github: "https://github.com/Meikandria",
   },
   {
     name: "RANDRIAFARA Cedrick Bruyeron",
     role: "Développeur",
     description:
-      "Ingénieur logiciel spécialisé dans l'IA conversationnelle et les systèmes embarqués.",
+      "Bandy tia milalao jeu sady bogosy",
     image: cedrickImage,
     email: "crandriafara@gmail.com",
-    linkedin: "#",
-    github: "#",
+    linkedin: "https://www.linkedin.com/in/cedrick-bruyeron",
+    github: "https://github.com/bruyeron",
   },
   {
-    name: "Mendrika",
+    name: "MAMINIRINA Fahasoavana Mendrika",
     role: "UX/UI Designer",
     description:
-      "Experte en stratégie digitale avec un focus sur l'adoption technologique en milieu urbain malgache.",
+      "Experte en design digital, je conçois des solutions minimalistes et innovantes pour répondre aux besoins des utilisateurs.",
     image: mendrikaImage,
-    email: "miora@tranonai.mg",
-    linkedin: "#",
+    email: "nirinafasou@gmail.com",
+    linkedin: "https://www.linkedin.com/in/mendrika-f-maminirina-a61b6b251/",
+    github: "https://github.com/mendrikafahas",
   },
   {
-    name: "Mihaja",
+    name: "RABENINDRIANA Fandresena Mihaja",
     role: "Développeur Fullstack / IA",
     description:
-      "Développeur full-stack passionné par les technologies émergentes et l'UX/UI moderne.",
+      "Développeur full-stack et IA.",
     image: mihajaImage,
-    email: "ravo@tranonai.mg",
+    email: "fmihaja@gmail.com",
     linkedin: "#",
     github: "#",
   },
   {
-    name: "Tsiory",
-    role: "DevSecOps",
+    name: "RAKOTONIAINA Tsiorisoa",
+    role: "DevOps",
     description:
-      "Ingénieur spécialisé dans la sécurité applicative et l’optimisation des pipelines CI/CD.",
+      "Du code au cloud, je construis des liens. Automatisation, déploiement et innovation : l’art du DevOps Engineer.",
     image: tsioryImage,
-    email: "lalaina@tranonai.mg",
-    linkedin: "#",
-    github: "#",
+    email: "tsiory118@gmail.com",
+    linkedin: "https://www.linkedin.com/in/tsiorisoa-rakotoniaina-6b2469201/",
+    github: "https://github.com/tsiory118",
   },
   {
-    name: "Christiane",
+    name: "ANDRIAMIHARISOA Mamitiana Christianne",
     role: "Responsable IoT",
     description:
       "Ingénieure électronique focalisée sur la conception de capteurs IoT économes en énergie.",
     image: christianeImage,
-    email: "soa@tranonai.mg",
+    email: "andriamiharisoatan@gmail.com",
     linkedin: "#",
+    github: "#",
   },
   {
     name: "Princi",
@@ -93,13 +95,22 @@ const teamMembers: TeamMember[] = [
     linkedin: "#",
   },
   {
-    name: "Nina",
-    role: "Marketing Digital",
+    name: "RALAMBOARISON Nina",
+    role: "Management, Responsable financier & Community Manager",
     description:
-      "Experte en marketing digital et en stratégies de croissance.",
+      "Spécialiste en gestion financière, management de projet et communication digitale",
     image: ninaImage,
-    email: "nina@tranonai.mg",
+    email: "ninaralamboarison@gmail.com",
     linkedin: "#",
+  },
+  {
+    name: "AMBININTSOA Tanjona Fandresena",
+    role: "Project strategist",
+    description:
+      "Expert en energie durable et en stratégie des entreprises à impact environnementale.",
+    image: ninaImage,
+    email: "ambinintsoatanjona56@gmail.com",
+    linkedin: "https://www.linkedin.com/in/tanjona-ambinintsoa-3b0829281/",
   },
 ];
 
@@ -129,7 +140,7 @@ export function TeamSection() {
         technologique et à l'amélioration de l'habitat local.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 rounded-xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 rounded-xl mx-4">
         {teamMembers.map((member, i) => (
           <motion.div
             key={i}
@@ -139,7 +150,7 @@ export function TeamSection() {
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="group"
           >
-            <Card className="bg-white/5 border-white/10 hover:bg-white/10 transition-all duration-300 overflow-hidden z-10 group-hover:scale-105">
+            <Card className="bg-white/5 border-white/10 hover:bg-white/10 transition-all duration-300 overflow-hidden h-full z-10 group-hover:scale-105">
               <CardContent className="p-0">
                 <div className="relative">
                   <img
@@ -184,7 +195,7 @@ export function TeamSection() {
                   </h4>
                   <Badge
                     variant="secondary"
-                    className="mb-3 bg-[#19B7A5]/20 text-[#19B7A5] border-[#19B7A5]/30"
+                    className="mt-3 mb-3 bg-[#19B7A5]/20 text-[#19B7A5] border-[#19B7A5]/30"
                   >
                     {member.role}
                   </Badge>

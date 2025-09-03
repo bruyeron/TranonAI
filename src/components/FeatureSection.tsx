@@ -3,9 +3,10 @@
 import { motion } from "framer-motion";
 import {
   Shield, Heart, Activity,
-  Lock, Camera, AlertTriangle,
+  Camera, AlertTriangle,
   Wind, Flame, BatteryMedium, Zap,
-  Monitor
+  Monitor,
+  ScanFace
 } from "lucide-react";
 import { Card } from "./ui/card";
 
@@ -18,7 +19,7 @@ const features = [
     color: "#19B7A5",
     bgColor: "#19B7A511",
     devices: [
-      { name: "Reconnaissance faciale", icon: Lock, description: "Identification des intrus" },
+      { name: "Reconnaissance faciale", icon: ScanFace, description: "Identification des intrus" },
       { name: "Caméra de surveillance", icon: Camera, description: "Monitoring HD avec vision nocturne" },
       { name: "Détection d'intrusion", icon: AlertTriangle, description: "Capteurs de mouvement et alertes instantanées" }
     ]

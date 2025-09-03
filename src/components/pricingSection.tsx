@@ -4,9 +4,25 @@ import { motion } from "framer-motion";
 import { Check, Package, Smartphone, Star, Minus } from "lucide-react";
 import { Button } from "./ui/buttonVariant";
 import { Card } from "./ui/card";
+import { useNavigate } from "react-router-dom";
 
-// 🔹 Données
-const productPlans = [
+// 🔹 Typage des plans
+type Feature = { label: string; included: boolean };
+type Plan = {
+  name: string;
+  price: string;
+  currency: string;
+  period: string;
+  description: string;
+  features: Feature[];
+  highlight: boolean;
+  badge: string;
+  icon: React.ElementType;
+  color: string;
+};
+
+// 🔹 Données produits
+const productPlans: Plan[] = [
   {
     name: "Kit Standard (Limité)",
     price: "450 000",
@@ -66,7 +82,8 @@ const productPlans = [
   },
 ];
 
-const appPlans = [
+// 🔹 Données application
+const appPlans: Plan[] = [
   {
     name: "Version Gratuite",
     price: "0",
@@ -91,7 +108,7 @@ const appPlans = [
     period: "À vie",
     description: "Fonctionnalités avancées avec NEXORA et configuration personnalisée",
     features: [
-      { label: "Application mobile ", included: true },
+      { label: "Application mobile", included: true },
       { label: "Module sécurité", included: true },
       { label: "Module santé", included: true },
       { label: "Module surveillance conso", included: true },
@@ -106,7 +123,9 @@ const appPlans = [
 ];
 
 // 🔹 Composant générique
-function PlanCard({ plan, index }: { plan: any; index: number }) {
+function PlanCard({ plan, index }: { plan: Plan; index: number }) {
+  const navigate = useNavigate();
+
   return (
     <motion.div
       key={plan.name}
@@ -117,6 +136,7 @@ function PlanCard({ plan, index }: { plan: any; index: number }) {
       whileHover={{ y: -10 }}
       className="relative"
     >
+      {/* Badge */}
       {plan.highlight && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2">
           <span
@@ -131,9 +151,10 @@ function PlanCard({ plan, index }: { plan: any; index: number }) {
       <Card
         className={`p-8 h-full transition-all duration-300 border ${
           plan.highlight
-            ? `bg-gradient-to-b from-[#1E293B] to-[#0F172A] border-[${plan.color}]/50`
+            ? "bg-gradient-to-b from-[#1E293B] to-[#0F172A]"
             : "bg-[#1E293B] border-gray-700"
         }`}
+        style={{ borderColor: plan.highlight ? plan.color : undefined }}
       >
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
@@ -160,15 +181,12 @@ function PlanCard({ plan, index }: { plan: any; index: number }) {
 
         {/* Fonctionnalités */}
         <ul className="space-y-4 mb-8">
-          {plan.features.map((feature: any, idx: number) => (
+          {plan.features.map((feature, idx) => (
             <motion.li
               key={feature.label}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 0.4,
-                delay: index * 0.1 + idx * 0.1,
-              }}
+              transition={{ duration: 0.4, delay: index * 0.1 + idx * 0.1 }}
               viewport={{ once: true }}
               className="flex items-center gap-3"
             >
@@ -182,16 +200,20 @@ function PlanCard({ plan, index }: { plan: any; index: number }) {
           ))}
         </ul>
 
-        {/* Bouton */}
-        <Button
-          className={`w-full py-3 font-medium transition hover:scale-105 ${
-            plan.highlight
-              ? `bg-[${plan.color}] hover:opacity-90 text-black`
-              : "bg-[#FBAF40] hover:bg-[#E99A2C] text-black"
-          }`}
-        >
-          {plan.highlight ? "Commencer maintenant" : "Voir"}
-        </Button>
+        {/* Bouton uniquement si highlight */}
+        {plan.highlight && (
+          <Button
+            aria-label="Lancer projet"
+            onClick={() => {
+              navigate("/evaluation");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="w-full py-3 font-medium transition hover:scale-105"
+            style={{ backgroundColor: plan.color, color: "#000" }}
+          >
+            Commencez maintenant
+          </Button>
+        )}
       </Card>
     </motion.div>
   );

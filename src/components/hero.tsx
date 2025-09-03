@@ -96,7 +96,7 @@ function HeroSection() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.5 }}
                 >
-                    <MainButton>Passez à la maison connectée</MainButton>
+                    <MainButton>Connectez votre maison</MainButton>
                     <SecondaryButton onClick={() => setShowVideo(true)}>Regarder la démo</SecondaryButton>
                 </motion.div>
 

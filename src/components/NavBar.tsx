@@ -115,9 +115,16 @@ export default function NavBar() {
       </ul>
 
       {/* Actions */}
+      {/* Actions */}
       <div className="flex items-center gap-4 sm:gap-6">
         {/* Bouton Rocket */}
-        <button aria-label="Lancer projet">
+        <button
+          aria-label="Lancer projet"
+          onClick={() => {
+            navigate("/evaluation");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
           <Rocket className="w-5 h-5 hover:border-b-2 border-[#FBAF42] transition duration-300" />
         </button>
 

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import MainButton, { SecondaryButton } from "./button";
 import backGround from "../assets/background.jpg";
-import DemoVideo from "../assets/video/promo.mp4"; // <-- ta vidéo locale
+import DemoVideo from "../assets/video/demo.mp4";
 
 type StatItemProps = {
     value: string;

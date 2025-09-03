@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Smartphone, Mic, Eye, Users, Settings } from "lucide-react";
+import { Smartphone, Mic, Eye, Users, Settings, Radar, AlarmSmokeIcon } from "lucide-react";
 import MainButton from "./button";
 
 const features = [
@@ -9,6 +9,8 @@ const features = [
   { icon: Users, title: "Multi-utilisateurs", desc: "Gestion familiale" },
   { icon: Settings, title: "Automatisation", desc: "Scénarios intelligents" },
   { icon: Mic, title: "Contrôle vocal", desc: "Assistant NEXORA" },
+  { icon: Radar, title: "Détection de gaspillages", desc: "Contrôle votre consommation" },
+  { icon: AlarmSmokeIcon, title: "Indicateur d'empreinte carbone", desc: "Gestion de l'empreinte carbone" },
 ];
 
 const dashboardCards = [

@@ -25,17 +25,22 @@ type Plan = {
 const productPlans: Plan[] = [
   {
     name: "Kit Standard (Limité)",
-    price: "450 000",
+    price: "30 000",
     currency: "Ar",
-    period: "installation complète",
-    description: "Solution domotique complète pour votre maison",
+    period: "par mois",
+    description: "Solution domotique standard pour votre maison",
     features: [
       { label: "3 modules intelligents inclus", included: true },
       { label: "Installation professionnelle", included: true },
-      { label: "Configuration personnalisée", included: true },
-      { label: "Formation utilisateur", included: true },
-      { label: "Garantie 1 an", included: true },
+      { label: "Application mobile", included: true },
+      { label: "Accès caméra", included: true },
+      { label: "Reconnaissance faciale", included: false },
+      { label: "Stockage cloud pendant 30 jours", included: false },
+      { label: "Notification intelligente", included: false },
+      { label: "Détection des anomalies matérielles", included: false },
+      { label: "Garantie 1 an", included: false },
       { label: "Support technique prioritaire", included: false },
+      { label: "Nexora", included: false },
     ],
     highlight: false,
     badge: "Recommandé",
@@ -44,17 +49,21 @@ const productPlans: Plan[] = [
   },
   {
     name: "Kit Standard (Complet)",
-    price: "450 000",
+    price: "60 000",
     currency: "Ar",
-    period: "installation complète",
+    period: "par mois",
     description: "Solution domotique complète pour votre maison",
     features: [
       { label: "3 modules intelligents inclus", included: true },
       { label: "Installation professionnelle", included: true },
-      { label: "Configuration personnalisée", included: true },
-      { label: "Formation utilisateur", included: true },
-      { label: "Garantie 1 an", included: false },
+      { label: "Application mobile", included: true },
+      { label: "Accès caméra + reconnaissance faciale", included: true },
+      { label: "Stockage cloud pendant 30 jours", included: true },
+      { label: "Notification intelligente", included: true },
+      { label: "Détection des anomalies matérielles", included: true },
+      { label: "Garantie 1 an", included: true },
       { label: "Support technique prioritaire", included: true },
+      { label: "Nexora", included: true },
     ],
     highlight: true,
     badge: "Recommandé",
@@ -63,10 +72,10 @@ const productPlans: Plan[] = [
   },
   {
     name: "Kit Entreprise",
-    price: "450 000",
+    price: "120 000",
     currency: "Ar",
-    period: "installation complète",
-    description: "Solution domotique complète pour votre maison",
+    period: "par mois",
+    description: "Solution domotique sur mesure pour votre entreprise",
     features: [
       { label: "3 modules intelligents inclus", included: true },
       { label: "Installation professionnelle", included: true },
@@ -116,7 +125,7 @@ const appPlans: Plan[] = [
       { label: "Garanti 1 an", included: true },
     ],
     highlight: true,
-    badge: "Populaire",
+    badge: "Tranon'AI",
     icon: Star,
     color: "#19B7A5",
   },
@@ -125,6 +134,12 @@ const appPlans: Plan[] = [
 // 🔹 Composant générique
 function PlanCard({ plan, index }: { plan: Plan; index: number }) {
   const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate("/evaluation");
+    // ✅ Scroll en haut après navigation
+    setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
+  };
 
   return (
     <motion.div
@@ -204,10 +219,7 @@ function PlanCard({ plan, index }: { plan: Plan; index: number }) {
         {plan.highlight && (
           <Button
             aria-label="Lancer projet"
-            onClick={() => {
-              navigate("/evaluation");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
+            onClick={handleNavigate}
             className="w-full py-3 font-medium transition hover:scale-105"
             style={{ backgroundColor: plan.color, color: "#000" }}
           >

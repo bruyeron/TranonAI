@@ -29,7 +29,7 @@ function useDarkMode() {
 const navItems = [
   { label: "Nexora", id: "nexora", route: "/home" },
   { label: "Services", id: "services", route: "/home" },
-  { label: "Prix", id: "pricing", route: "/home" },
+  { label: "Tarif", id: "pricing", route: "/home" },
   { label: "À propos", route: "/about" },
 ];
 

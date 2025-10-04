@@ -37,7 +37,7 @@ const features = [
 
 function ControleMobile() {
   return (
-    <section className="dark:bg-[#1E293B] bg-[#F2F4F8] py-16 px-4 sm:px-8 flex flex-col items-center">
+    <section id="mobile" className="dark:bg-[#1E293B] bg-[#F2F4F8] py-16 px-4 sm:px-8 flex flex-col items-center">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -4,14 +4,16 @@ import { Card, CardContent } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
 import { Mail, Linkedin, Github } from "lucide-react";
 
-import meikImage from "../assets/equipe/meik.jpg";
-import cedrickImage from "../assets/equipe/maitre.jpeg";
+import meikImage from "../assets/equipe/meik.jpeg";
+import cedrickImage from "../assets/equipe/cedrick.png";
 import mendrikaImage from "../assets/equipe/mendrika.jpeg";
 import christianeImage from "../assets/equipe/christiane.jpeg";
 import mihajaImage from "../assets/equipe/mihaja.jpeg";
 import ninaImage from "../assets/equipe/nina.jpeg";
 import tsioryImage from "../assets/equipe/tsiory.jpeg";
 import princiImage from "../assets/equipe/princi.jpeg";
+import tanjonaImage from "../assets/equipe/tanjona.jpeg";
+
 
 interface TeamMember {
   name: string;
@@ -46,14 +48,14 @@ const teamMembers: TeamMember[] = [
     github: "https://github.com/bruyeron",
   },
   {
-    name: "MAMINIRINA Fahasoavana Mendrika",
-    role: "UX/UI Designer",
+    name: "ANDRIAMIHARISOA Mamitiana Christianne",
+    role: "Responsable IoT",
     description:
-      "Experte en design digital, je conçois des solutions minimalistes et innovantes pour répondre aux besoins des utilisateurs.",
-    image: mendrikaImage,
-    email: "nirinafasou@gmail.com",
-    linkedin: "https://www.linkedin.com/in/mendrika-f-maminirina-a61b6b251/",
-    github: "https://github.com/mendrikafahas",
+      "Ingénieure électronique focalisée sur la conception de capteurs IoT économes en énergie.",
+    image: christianeImage,
+    email: "andriamiharisoatan@gmail.com",
+    linkedin: "#",
+    github: "#",
   },
   {
     name: "RABENINDRIANA Fandresena Mihaja",
@@ -66,24 +68,23 @@ const teamMembers: TeamMember[] = [
     github: "#",
   },
   {
-    name: "RAKOTONIAINA Tsiorisoa",
-    role: "DevOps",
+    name: "AMBININTSOA Tanjona Fandresena",
+    role: "Project strategist",
     description:
-      "Du code au cloud, je construis des liens. Automatisation, déploiement et innovation : l’art du DevOps Engineer.",
-    image: tsioryImage,
-    email: "tsiory118@gmail.com",
-    linkedin: "https://www.linkedin.com/in/tsiorisoa-rakotoniaina-6b2469201/",
-    github: "https://github.com/tsiory118",
+      "Expert en energie durable et en stratégie des entreprises à impact environnementale.",
+    image: tanjonaImage,
+    email: "ambinintsoatanjona56@gmail.com",
+    linkedin: "https://www.linkedin.com/in/tanjona-ambinintsoa-3b0829281/",
   },
   {
-    name: "ANDRIAMIHARISOA Mamitiana Christianne",
-    role: "Responsable IoT",
+    name: "MAMINIRINA Fahasoavana Mendrika",
+    role: "UX/UI Designer",
     description:
-      "Ingénieure électronique focalisée sur la conception de capteurs IoT économes en énergie.",
-    image: christianeImage,
-    email: "andriamiharisoatan@gmail.com",
-    linkedin: "#",
-    github: "#",
+      "Experte en design digital, je conçois des solutions minimalistes et innovantes pour répondre aux besoins des utilisateurs.",
+    image: mendrikaImage,
+    email: "nirinafasou@gmail.com",
+    linkedin: "https://www.linkedin.com/in/mendrika-f-maminirina-a61b6b251/",
+    github: "https://github.com/mendrikafahas",
   },
   {
     name: "Princi",
@@ -104,13 +105,14 @@ const teamMembers: TeamMember[] = [
     linkedin: "#",
   },
   {
-    name: "AMBININTSOA Tanjona Fandresena",
-    role: "Project strategist",
+    name: "RAKOTONIAINA Tsiorisoa",
+    role: "DevOps",
     description:
-      "Expert en energie durable et en stratégie des entreprises à impact environnementale.",
-    image: ninaImage,
-    email: "ambinintsoatanjona56@gmail.com",
-    linkedin: "https://www.linkedin.com/in/tanjona-ambinintsoa-3b0829281/",
+      "Du code au cloud, je construis des liens. Automatisation, déploiement et innovation : l’art du DevOps Engineer.",
+    image: tsioryImage,
+    email: "tsiory118@gmail.com",
+    linkedin: "https://www.linkedin.com/in/tsiorisoa-rakotoniaina-6b2469201/",
+    github: "https://github.com/tsiory118",
   },
 ];
 

@@ -94,7 +94,7 @@ const productPlans: Plan[] = [
 // 🔹 Données application
 const appPlans: Plan[] = [
   {
-    name: "Version Gratuite",
+    name: "Application mobile gratuite",
     price: "0",
     currency: "Ar",
     period: "à vie",

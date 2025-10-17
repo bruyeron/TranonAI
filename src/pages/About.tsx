@@ -3,14 +3,17 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "../components/ui/card";
 import {
   Target, Users, Globe, Award, Lightbulb, Leaf, Shield, TrendingUp,
-  BatteryCharging, Recycle, Factory
+  BatteryCharging, Recycle, Factory, HeartPulse, Cog, Handshake
 } from "lucide-react";
 
 // Import images ODD
+import odd3 from "../assets/ODD/odd3.png";
 import odd7 from "../assets/ODD/odd7.png";
+import odd9 from "../assets/ODD/odd9.png";
 import odd11 from "../assets/ODD/odd11.png";
 import odd12 from "../assets/ODD/odd12.png";
 import odd13 from "../assets/ODD/odd13.png";
+import odd17 from "../assets/ODD/odd17.png";
 
 // Typage des icônes
 type IconType = React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -34,10 +37,37 @@ const values: ValueItem[] = [
 ];
 
 const oddData: OddItem[] = [
+  { 
+    id: 3, 
+    icon: HeartPulse, 
+    color: "#279b48", 
+    title: "ODD 3", 
+    subtitle: "Bonne santé et bien-être", 
+    description: "La domotique améliore la qualité de vie grâce à des capteurs de santé et des systèmes d’alerte connectés pour la sécurité et le bien-être des habitants.", 
+    img: odd3 
+  },
   { id: 7, icon: BatteryCharging, color: "#fdb713", title: "ODD 7", subtitle: "Énergie propre et d'un coût abordable", description: "La domotique optimise la consommation énergétique grâce à des systèmes intelligents de gestion de l'éclairage, du chauffage et des appareils électroménagers.", img: odd7 },
+  { 
+    id: 9, 
+    icon: Cog, 
+    color: "#f36d26", 
+    title: "ODD 9", 
+    subtitle: "Industrie, innovation et infrastructure", 
+    description: "Les systèmes domotiques s’appuient sur l’innovation technologique et les infrastructures numériques pour bâtir des logements intelligents et connectés.", 
+    img: odd9 
+  },
   { id: 11, icon: Factory, color: "#f99d26", title: "ODD 11", subtitle: "Ville et communautés durables", description: "Les maisons connectées contribuent à créer des quartiers intelligents et durables en optimisant les ressources urbaines.", img: odd11 },
   { id: 12, icon: Recycle, color: "#cf8d2a", title: "ODD 12", subtitle: "Consommation et production responsables", description: "La domotique permet un contrôle précis des appareils pour réduire le gaspillage et optimiser l'utilisation des ressources.", img: odd12 },
   { id: 13, icon: Leaf, color: "#48773e", title: "ODD 13", subtitle: "Mesures relatives à la lutte contre les changements climatiques", description: "Les systèmes domotiques réduisent significativement les émissions de CO2 par une gestion intelligente de l'énergie.", img: odd13 },
+  { 
+    id: 17, 
+    icon: Handshake, 
+    color: "#19486a", 
+    title: "ODD 17", 
+    subtitle: "Partenariats pour la réalisation des objectifs", 
+    description: "Les projets domotiques favorisent la collaboration entre entreprises, gouvernements et institutions académiques pour un développement durable inclusif.", 
+    img: odd17 
+  }
 ];
 
 export function AboutSection() {
@@ -150,18 +180,18 @@ function ValuesSection({ values }: { values: ValueItem[] }) {
 // Composant ODD
 function ODDSection() {
   return (
-    <section className="flex flex-col items-center py-16 px-4 sm:px-6 lg:px-10">
+    <section className="flex flex-col justify-center items-center py-16 px-4 sm:px-6 lg:px-10">
       <h2 className="dark:text-white text-black font-bold text-2xl sm:text-4xl md:text-5xl text-center mb-4">
         Nos Engagements <span className="text-[#19B7A5]">ODD</span>
       </h2>
       <p className="text-gray-500 dark:text-[#9CA3AF] text-base sm:text-lg md:text-xl text-center max-w-3xl mb-12">
         Notre projet domotique contribue activement à l'atteinte de plusieurs Objectifs de Développement Durable des Nations Unies
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl">
+      <div className="flex flex-wrap justify-center gap-6 w-full max-w-7xl">
         {oddData.map(({ id, icon: Icon, title, subtitle, description, img, color }) => (
           <motion.div
             key={id}
-            className="border border-[#334155] rounded-2xl p-6 bg-gray-400 dark:bg-[#0F172A] hover:border-[#19B7A5] hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer flex flex-col items-center text-center"
+            className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.125rem)] border border-[#334155] rounded-2xl p-6 bg-gray-400 dark:bg-[#0F172A] hover:border-[#19B7A5] hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer flex flex-col items-center text-center"
             whileHover={{ scale: 1.05 }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

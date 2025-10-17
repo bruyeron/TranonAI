@@ -48,47 +48,47 @@ const InnovationCard = ({
 
 function Innovation() {
   const cards: CardProps[] = [
-    {
-      icon: <Brain className="bg-[#19B7A5] w-12 h-12 p-3 rounded-2xl" />,
-      title: 'Adaptative AI Learning',
-      description:
-        "Our AI learns your family's daily patterns and automatically adjusts settings for maximum comfort and efficiency.",
-      badge: 'Learn in 7 days',
-      bgImage: new URL('../assets/AI.jpg', import.meta.url).href,
-      gradient:
-        'linear-gradient(135deg,#0F172AAA 0%,#1E293BAA 50%,#0F172A 100%)',
-    },
-    {
-      icon: <Leaf className="bg-[#19B7A5] w-12 h-12 p-3 rounded-2xl" />,
-      title: 'Eco-Smart Technology',
-      description:
-        'Reduce your carbon footprint with intelligent energy management that prioritizes renewable sources and minimizes waste.',
-      badge: '60% less CO2',
-      bgImage: new URL('../assets/eco-smart.jpg', import.meta.url).href,
-      gradient:
-        'linear-gradient(135deg,#0F172AAA 0%,#1E293BAA 50%,#0F172A 100%)',
-    },
-    {
-      icon: <ShieldCheck className="bg-[#19B7A5] w-12 h-12 p-3 rounded-2xl" />,
-      title: 'Privacy-First Design',
-      description:
-        'All data processing happens locally on your device. Your privacy is protected with end-to-end encryption.',
-      badge: '100% local processing',
-      bgImage: new URL('../assets/privacy.jpg', import.meta.url).href,
-      gradient:
-        'linear-gradient(135deg,#0F172AAA 0%,#1E293BAA 50%,#0F172A 100%)',
-    },
-    {
-      icon: <Wifi className="bg-[#19B7A5] w-12 h-12 p-3 rounded-2xl" />,
-      title: 'Mesh Network Integration',
-      description:
-        'Create a robust smart home network that extends coverage and ensures reliable connectivity throughout your property.',
-      badge: '500m range',
-      bgImage: new URL('../assets/network.jpg', import.meta.url).href,
-      gradient:
-        'linear-gradient(180deg,#0F172AF6 0%,#1E293B59 50%,#0F172AFF 100%)',
-    },
-  ];
+  {
+    icon: <Brain className="bg-[#19B7A5] w-12 h-12 p-3 rounded-2xl" />,
+    title: 'Apprentissage IA Adaptatif',
+    description:
+      "Notre IA apprend les habitudes quotidiennes de votre famille et ajuste automatiquement les paramètres pour un confort et une efficacité maximum.",
+    badge: 'Apprentissage en 7 jours',
+    bgImage: new URL('../assets/AI.jpg', import.meta.url).href,
+    gradient:
+      'linear-gradient(135deg,#0F172AAA 0%,#1E293BAA 50%,#0F172A 100%)',
+  },
+  {
+    icon: <Leaf className="bg-[#19B7A5] w-12 h-12 p-3 rounded-2xl" />,
+    title: 'Technologie Éco-Intelligente (Eco-Smart)',
+    description:
+      "Réduisez votre empreinte carbone grâce à une gestion intelligente de l'énergie qui privilégie les sources renouvelables et minimise le gaspillage.",
+    badge: '60% de CO2 en moins',
+    bgImage: new URL('../assets/eco-smart.jpg', import.meta.url).href,
+    gradient:
+      'linear-gradient(135deg,#0F172AAA 0%,#1E293BAA 50%,#0F172A 100%)',
+  },
+  {
+    icon: <ShieldCheck className="bg-[#19B7A5] w-12 h-12 p-3 rounded-2xl" />,
+    title: 'Conception Axée sur la Confidentialité',
+    description:
+      "Tout le traitement des données se fait localement sur votre appareil. Votre confidentialité est protégée par un chiffrement de bout en bout.",
+    badge: 'Traitement 100% local',
+    bgImage: new URL('../assets/privacy.jpg', import.meta.url).href,
+    gradient:
+      'linear-gradient(135deg,#0F172AAA 0%,#1E293BAA 50%,#0F172A 100%)',
+  },
+  {
+    icon: <Wifi className="bg-[#19B7A5] w-12 h-12 p-3 rounded-2xl" />,
+    title: 'Intégration de Réseau Maillé (Mesh)',
+    description:
+      'Créez un réseau domestique intelligent robuste qui étend la couverture et assure une connectivité fiable dans toute votre propriété.',
+    badge: 'Portée de 500m',
+    bgImage: new URL('../assets/network.jpg', import.meta.url).href,
+    gradient:
+      'linear-gradient(180deg,#0F172AF6 0%,#1E293B59 50%,#0F172AFF 100%)',
+  },
+];
 
   return (
     <section className="flex flex-col items-center dark:bg-[#0F172A] bg-[#F2F4F8] py-16 px-4 sm:px-6 lg:px-12">
@@ -99,7 +99,7 @@ function Innovation() {
         transition={{ duration: 0.6 }}
         className="dark:text-white text-black font-bold text-3xl sm:text-5xl md:text-6xl text-center mb-4"
       >
-        Cutting-Edge <span className="text-[#19B7A5]">Innovations</span>
+        Innovations <span className="text-[#19B7A5]">de pointe.</span>
       </motion.h1>
 
       <motion.p
@@ -109,8 +109,7 @@ function Innovation() {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="dark:text-[#9CA3AF] text-gray-500 text-base sm:text-lg md:text-xl text-center max-w-3xl mb-12"
       >
-        Powered by breakthrough technologies that make smart living accessible,
-        sustainable, and secure for every Malagasy household.
+        Propulsées par des technologies de rupture qui rendent la vie intelligente accessible, durable et sécurisée pour chaque foyer malgache.
       </motion.p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-8 w-full max-w-6xl">

@@ -6,14 +6,14 @@ import { Label } from "../components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
-import { Users, Shield, Heart, Zap, CheckCircle2, ArrowRight } from "lucide-react";
+import { Shield, Heart, Zap, CheckCircle2, ArrowRight } from "lucide-react";
 
 interface FormData {
   housingType: string;
   rooms: string;
   kitchen: string;
   occupants: string;
-  floors: string; // ✅ Ajouté pour le nombre d’étages
+  floors: string;
   priorities: string[];
   budget: string;
   contact: {
@@ -87,15 +87,6 @@ export function NeedsAssessmentSection() {
 
     setRecommendations(newRecommendations);
     setShowRecommendations(true);
-  };
-
-  const handlePriorityToggle = (priority: string) => {
-    setFormData(prev => ({
-      ...prev,
-      priorities: prev.priorities.includes(priority)
-        ? prev.priorities.filter(p => p !== priority)
-        : [...prev.priorities, priority]
-    }));
   };
 
   const totalDevices = recommendations.reduce((sum, rec) => sum + rec.quantity, 0);

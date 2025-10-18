@@ -41,7 +41,7 @@ const teamMembers: TeamMember[] = [
     name: "RANDRIAFARA Cedrick Bruyeron",
     role: "Développeur",
     description:
-      "Bandy tia milalao jeu sady bogosy",
+      "Développeur passionné par les technologies web et mobiles.",
     image: cedrickImage,
     email: "crandriafara@gmail.com",
     linkedin: "https://www.linkedin.com/in/cedrick-bruyeron",

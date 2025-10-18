@@ -2,16 +2,20 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Sun, Moon, Users, Rocket } from 'lucide-react';
+import { Sun, Moon, Users, Rocket, Info } from 'lucide-react'; // Importation de Info
 import logoDark from '../assets/Logo_tranonai.png';
 import logoLight from '../assets/Logo_sombre.png';
 
-// Hook pour le dark mode
+// Taille d'écran de référence pour Tailwind 'md'
+const MD_BREAKPOINT = 768;
+
+// Hook pour le dark mode (inchangé - Garde le dans un fichier séparé si possible)
 function useDarkMode() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem('theme');
+    // Vérifie la préférence utilisateur si rien n'est sauvegardé
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     setIsDarkMode(saved ? saved === 'dark' : prefersDark);
   }, []);
@@ -25,7 +29,25 @@ function useDarkMode() {
   return [isDarkMode, toggle] as const;
 }
 
-// Liste des liens du menu
+// Hook pour détecter la taille d'écran (Optimisé)
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < MD_BREAKPOINT);
+    };
+
+    checkMobile(); // Vérification initiale
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  return isMobile;
+}
+
+// Liste des liens du menu (inchangé)
 const navItems = [
   { label: "Nexora", id: "nexora", route: "/home" },
   { label: "Services", id: "services", route: "/home" },
@@ -33,7 +55,7 @@ const navItems = [
   { label: "À propos", route: "/about" },
 ];
 
-// Composant lien navigation
+// Composant lien navigation (inchangé)
 function NavLink({ item }: { item: typeof navItems[0] }) {
   const location = useLocation();
   const navigate = useNavigate();
@@ -43,7 +65,6 @@ function NavLink({ item }: { item: typeof navItems[0] }) {
 
     if (item.route === "/home" && item.id) {
       if (location.pathname !== "/home") {
-        // Naviguer vers /home puis scroller
         navigate(`/home`, { state: { scrollTo: item.id } });
       } else {
         const element = document.getElementById(item.id);
@@ -68,12 +89,14 @@ function NavLink({ item }: { item: typeof navItems[0] }) {
   );
 }
 
+// Composant principal de la barre de navigation
 export default function NavBar() {
   const [isDarkMode, toggleDarkMode] = useDarkMode();
+  const isMobile = useIsMobile(); // Utilisation du hook optimisé
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Scroll automatique après navigation avec state.scrollTo
+  // Scroll automatique après navigation avec state.scrollTo (inchangé)
   useEffect(() => {
     const state = (location.state as any) || {};
     if (state.scrollTo) {
@@ -82,6 +105,16 @@ export default function NavBar() {
       window.history.replaceState({}, document.title); // nettoyer le state
     }
   }, [location]);
+
+  // Logique du premier bouton (Rocket/Info)
+  const handleFirstActionClick = () => {
+    const targetRoute = isMobile ? "/about" : "/evaluation";
+    navigate(targetRoute);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const FirstButtonIcon = isMobile ? Info : Rocket;
+  const firstButtonLabel = isMobile ? "À propos" : "Lancer projet";
 
   return (
     <nav className="fixed top-0 left-0 z-50 flex items-center justify-between w-full px-4 sm:px-10 py-3
@@ -105,7 +138,7 @@ export default function NavBar() {
         </h1>
       </a>
 
-      {/* Menu */}
+      {/* Menu (Masqué sur mobile) */}
       <ul className="hidden md:flex items-center gap-6 px-5 py-4 rounded-full bg-gray-100/80 backdrop-blur-sm dark:bg-black/5">
         {navItems.map(item => (
           <li key={item.label}>
@@ -115,17 +148,15 @@ export default function NavBar() {
       </ul>
 
       {/* Actions */}
-      {/* Actions */}
       <div className="flex items-center gap-4 sm:gap-6">
-        {/* Bouton Rocket */}
+        
+        {/* Bouton Rocket (Desktop) / Info (Mobile) */}
         <button
-          aria-label="Lancer projet"
-          onClick={() => {
-            navigate("/evaluation");
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
+          aria-label={firstButtonLabel}
+          onClick={handleFirstActionClick}
         >
-          <Rocket className="w-5 h-5 hover:border-b-2 border-[#FBAF42] transition duration-300" />
+          {/* L'icône change en fonction du mode mobile */}
+          <FirstButtonIcon className="w-5 h-5 hover:border-b-2 border-[#FBAF42] transition duration-300" />
         </button>
 
         {/* Bouton Users → redirige vers /team */}

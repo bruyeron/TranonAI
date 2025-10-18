@@ -1,6 +1,6 @@
 import { Smartphone, House, ChartPie, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
-import prototype from "../assets/prototype.jpg";
+import prototype from "../assets/mainAPP.png";
 
 const features = [
   {

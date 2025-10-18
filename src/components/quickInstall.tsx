@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Check } from "lucide-react";
 import MainButton from "./button";
 import { motion } from "framer-motion";
-import PrototypeTranonai from "../assets/Prototype-TranonAI.jpg";
+import PrototypeTranonai from "../assets/dispositifs-sanscam.png";
 import SpecsVideo from "../assets/video/demo.mp4"; // <-- Import vidéo
 
 type FeatureProps = {
